@@ -1,4 +1,6 @@
 import type { Project } from '@/ui/Project';
+import { IconType } from 'react-icons';
+import { FaGithub, FaLinkedin, FaMailBulk, FaPhone, FaTelegram } from 'react-icons/fa';
 import { AdditionalItem } from './Additional';
 
 export interface Skill {
@@ -9,6 +11,7 @@ export interface Skill {
 export interface Link {
 	title: string;
 	url: string;
+	icon: IconType;
 }
 
 export const PROJECTS: Project[] = [
@@ -87,21 +90,26 @@ export const LINKS: Link[] = [
 	{
 		title: 'GitHub',
 		url: 'https://github.com/holakirr',
+		icon: FaGithub,
 	},
 	{
 		title: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/holakirr/',
+		icon: FaLinkedin,
 	},
 	{
 		title: 'Telegram',
 		url: 'https://t.me/holakirr',
+		icon: FaTelegram,
 	},
 	{
 		title: 'Email',
 		url: 'mailto:kpetunin@proton.me',
+		icon: FaMailBulk,
 	},
 	{
 		title: 'Phone',
 		url: 'tel:+523343469939',
+		icon: FaPhone,
 	},
 ];

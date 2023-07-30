@@ -4,7 +4,7 @@ import Image from 'next/image';
 import MeImage from '/public/me.jpg';
 
 export const Header = () => (
-	<header className='flex flex-col-reverse md:flex-row justify-between items-center h-screen md:h-auto'>
+	<header className='flex flex-col-reverse md:flex-row justify-between items-center h-[100svh] md:h-auto md:p-6 xl:p-10'>
 		{/* Text content */}
 		<div className='p-4 flex flex-col gap-3'>
 			<Title className=''>Kirill Petunin</Title>
