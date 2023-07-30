@@ -22,6 +22,14 @@ export const Header = () => (
 			</div>
 			<Label className='underline text-xl'>Frontend developer, 5+ years</Label>
 		</div>
-		<Image src={MeImage} alt='Photo of me' className='transition-all w-screen md:w-96 hover:rounded-3xl' width={384} />
+		<Image
+			src={MeImage}
+			alt='Photo of me'
+			className='transition-all w-screen md:w-96 hover:rounded-3xl'
+			width={384}
+			placeholder='blur'
+			blurDataURL={MeImage.src}
+			loading='lazy'
+		/>
 	</header>
 );

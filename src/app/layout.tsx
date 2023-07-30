@@ -7,10 +7,13 @@ const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], display: 'swap', weig
 
 export const metadata: Metadata = {
 	title: "Kirill Petunin's CV",
-	description: 'This is my CV with current information on 2023',
+	description: 'I am a frontend developer with 5+ years of experience',
+	keywords:
+		'frontend, developer, react, typescript, javascript, nextjs, reactjs, web, html, css, sass, tailwindcss, git, github, nodejs, npm, yarn, webpack, babel, jest, testing, testing-library, cypress, storybook, figma, design, ui, ux, user, experience, user experience, user interface, user interface design, user experience design, ui design, ux design, ui/ux, ui/ux design, ui/ux design',
 	authors: [
 		{
 			name: 'Kirill Petunin',
+			url: 'https://github.com/holakirr',
 		},
 	],
 	openGraph: {
@@ -21,6 +24,11 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: me.src,
+				type: 'twitter:image',
+			},
+			{
+				url: me.src,
+				type: 'og:image',
 			},
 		],
 	},
