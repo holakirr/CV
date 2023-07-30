@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		locale: 'en_US',
 		images: [me.src],
+		url: 'https://cv-holakirr.vercel.app/',
 	},
 	twitter: {
 		title,
