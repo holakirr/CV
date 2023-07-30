@@ -1,6 +1,8 @@
-import { ProjectProps } from '@/ui/Project';
+import { Project } from '@/ui/Project';
+import { AdditionalItem } from './Additional';
+import { Skill } from './Skills';
 
-export const PROJECTS: ProjectProps[] = [
+export const PROJECTS: Project[] = [
 	{
 		title: 'Grid Dynamics',
 		description: 'engineering company',
@@ -47,5 +49,27 @@ export const PROJECTS: ProjectProps[] = [
 			'Managing all processes to create web-site for client from the scratch',
 			'Writing JavaScrip, CSS and pre-compilers (SCSS, Sass), HTML and PHP',
 		],
+	},
+];
+
+export const ADDITIONAL: AdditionalItem[] = [
+	{
+		name: 'Languages',
+		description: 'English (B2), Spanish (~A2), Russian (native)',
+	},
+	{
+		name: 'Udemy Courses',
+		description: 'Node.js, Mongo, GraphQL, MySQL, Express, NestJS, React+Next.js, Apollo GraphQL',
+	},
+];
+
+export const SKILLS: Skill[] = [
+	{
+		type: 'Advanced',
+		description: 'HTML+CSS+JavaScript, React+REDUX, Typescript, Tailwind, SASS, Webpack, git',
+	},
+	{
+		type: 'Intermediate',
+		description: 'Node.js, Express, NestJS, MongoDB, MySQL, GraphQL, Apollo, Next.js, Ember.js',
 	},
 ];

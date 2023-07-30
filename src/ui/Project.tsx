@@ -1,13 +1,15 @@
 import { HTMLAttributes } from 'react';
 import { Body, Label, ProjectPoint } from '.';
 
-export interface ProjectProps extends HTMLAttributes<HTMLDivElement> {
+export interface Project {
 	title: string;
 	description: string;
 	role: string;
 	dates: string;
 	points: string[];
 }
+
+type ProjectProps = HTMLAttributes<HTMLDivElement> & Project;
 
 export const Project = ({ title, role, description, dates, points }: ProjectProps) => (
 	<div className='flex flex-col gap-1'>
