@@ -1,3 +1,5 @@
+import { Section } from '@/ui';
+
 export const Additional = () => {
-	return <section>Additional</section>;
+	return <Section subtitle='Additional Experience and Achievements'></Section>;
 };

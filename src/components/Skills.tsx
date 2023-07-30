@@ -1,3 +1,5 @@
+import { Section } from '@/ui';
+
 export const Skills = () => {
-	return <section>Skills</section>;
+	return <Section subtitle='Technologies'></Section>;
 };
