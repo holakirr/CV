@@ -28,7 +28,7 @@ export const Header = () => (
 			className='transition-all w-screen md:w-96 hover:rounded-3xl'
 			width={384}
 			placeholder='blur'
-			blurDataURL={MeImage.src}
+			blurDataURL={MeImage.blurDataURL}
 			loading='lazy'
 		/>
 	</header>
