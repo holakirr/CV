@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { JetBrains_Mono } from 'next/font/google';
 import Head from 'next/head';
@@ -42,7 +43,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				{/* Twitter */}
 				<meta property='twitter:image' content={me.src} />
 			</Head>
-			<body className={jetBrainsMono.className}>{children}</body>
+			<body className={jetBrainsMono.className}>
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
