@@ -1,6 +1,6 @@
-import { Body, Label, Title } from '@/ui';
+import { Body, Label, Link, Title } from '@/ui';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import MeImage from '/public/me.jpg';
 
 export const Header = () => (
@@ -13,13 +13,10 @@ export const Header = () => (
 				<address>
 					<Body>México, Guadalajara</Body>
 				</address>
-				<Link className='transition-all text-orange-400 hover:text-red-400 hover:underline' href='tel:+523343469939'>
+				<Link href='tel:+523343469939'>
 					<Body>+52 3343469939</Body>
 				</Link>
-				<Link
-					className='transition-all text-orange-400 hover:text-red-400 hover:underline'
-					href='mailto:kpetunin@proton.me'
-				>
+				<Link href='mailto:kpetunin@proton.me'>
 					<Body>kpetunin@proton.me</Body>
 				</Link>
 			</div>

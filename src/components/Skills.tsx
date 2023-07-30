@@ -1,11 +1,6 @@
 import { Section } from '@/ui';
 import { SKILLS } from './const';
 
-export interface Skill {
-	type: string;
-	description: string;
-}
-
 export const Skills = () => {
 	return (
 		<Section subtitle='Technologies'>

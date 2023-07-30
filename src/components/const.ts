@@ -1,6 +1,15 @@
-import { Project } from '@/ui/Project';
+import type { Project } from '@/ui/Project';
 import { AdditionalItem } from './Additional';
-import { Skill } from './Skills';
+
+export interface Skill {
+	type: string;
+	description: string;
+}
+
+export interface Link {
+	title: string;
+	url: string;
+}
 
 export const PROJECTS: Project[] = [
 	{
@@ -71,5 +80,28 @@ export const SKILLS: Skill[] = [
 	{
 		type: 'Intermediate',
 		description: 'Node.js, Express, NestJS, MongoDB, MySQL, GraphQL, Apollo, Next.js, Ember.js',
+	},
+];
+
+export const LINKS: Link[] = [
+	{
+		title: 'GitHub',
+		url: 'https://github.com/holakirr',
+	},
+	{
+		title: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/holakirr/',
+	},
+	{
+		title: 'Telegram',
+		url: 'https://t.me/holakirr',
+	},
+	{
+		title: 'Email',
+		url: 'mailto:kpetunin@proton.me',
+	},
+	{
+		title: 'Phone',
+		url: 'tel:+523343469939',
 	},
 ];
