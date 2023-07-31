@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 	title,
 	description,
 	keywords:
-		'frontend, developer, react, typescript, javascript, nextjs, reactjs, web, html, css, sass, tailwindcss, git, github, nodejs, npm, yarn, webpack, babel, jest, testing, testing-library, cypress, storybook, figma, design, ui, ux, user, experience, user experience, user interface, user interface design, user experience design, ui design, ux design, ui/ux, ui/ux design, ui/ux design',
+		"software engineer's CV, software engineer's resume, frontend developer's CV, frontend developer's resume, frontend development experience, frontend development 5+ years experience, frontend development 3+ years experience, frontend development 4+ years experience, frontend development projects, web developer role, frontend development skills, frontend developer role, web developer qualifications",
 	authors: [
 		{
 			name: 'Kirill Petunin',

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import MeImage from '/public/me.jpg';
 
 export const Header = () => (
-	<header className='flex flex-col-reverse md:flex-row justify-between items-center h-[100svh] md:h-auto md:p-6 xl:p-10'>
+	<header className='flex flex-col-reverse gap-16 md:gap-0 md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10'>
 		{/* Text content */}
 		<div className='p-4 flex flex-col gap-3'>
 			<Title className=''>Kirill Petunin</Title>
@@ -20,7 +20,9 @@ export const Header = () => (
 					<Body>kpetunin@proton.me</Body>
 				</Link>
 			</div>
-			<Label className='underline text-xl'>Frontend developer, 5+ years</Label>
+			<Label className='text-xl'>
+				<u>Frontend developer, 5+ years</u>
+			</Label>
 		</div>
 		<Image
 			src={MeImage}
@@ -30,6 +32,7 @@ export const Header = () => (
 			placeholder='blur'
 			blurDataURL={MeImage.blurDataURL}
 			loading='lazy'
+			quality={70}
 		/>
 	</header>
 );

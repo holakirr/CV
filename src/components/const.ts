@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
 		role: 'User Interface Engineer',
 		dates: 'jun 2021 – present',
 		points: [
-			'Contributed to the development of American Eagle, Align, The Home Depot and internal project using Typescript, JavaScript, React, Redux, Ember and Node.js',
+			'Contributed to the development of one of the biggest clothes shop, company focused on aligners production, American multinational home improvement retail corporation and internal project using Typescript, JavaScript, React, Redux, Ember and Node.js',
 			'Collaborated with cross-functional teams to define requirements, design system architectures, and implement scalable solutions',
 			'Played a key role in troubleshooting and resolving technical issues, ensuring the smooth operation of software applications',
 			'Mentored and onboarded junior team members, providing guidance and support to foster their professional growth',
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
 		role: 'Frontend Developer',
 		dates: 'sep 2020 – jun 2021',
 		points: [
-			'Led the development of GazpromBank internal application and Sberbank web application, utilizing React, Redux and Typescript to deliver robust and scalable solutions',
+			"Led the development on two biggest bank companies' web application, utilizing React, Redux and Typescript to deliver robust and scalable solutions",
 			'Collaborated closely with product managers, designers, and other stakeholders to understand requirements and translate them into technical specifications',
 			'Implemented code optimization, performance tuning, and security considerations',
 		],

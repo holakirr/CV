@@ -9,9 +9,10 @@ export const Link = ({ className, href, children }: LinkProps) => {
 		<BaseLink
 			href={href}
 			className={clsx(
-				'transition-all text-orange-400 hover:text-red-400 hover:underline visited:text-yellow-400 fill-orange-400 hover:fill-red-400 visited:fill-yellow-400',
+				'transition-all text-orange-700 hover:text-red-700 hover:underline visited:text-yellow-700 fill-orange-700 hover:fill-red-700 visited:fill-yellow-700',
 				className,
 			)}
+			target='_blank'
 		>
 			{children}
 		</BaseLink>
