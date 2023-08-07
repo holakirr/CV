@@ -12,7 +12,7 @@ export const Contacts = () => (
 			{LINKS.map(link => (
 				<li key={link.title}>
 					<Link className='flex items-center gap-2' href={link.url}>
-						<link.icon width={24} height={24} />
+						<link.icon width={20} height={20} />
 						{link.title}
 					</Link>
 				</li>
