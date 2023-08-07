@@ -9,7 +9,7 @@ export interface Skill {
 export interface Link {
 	title: string;
 	url: string;
-	icon: () => JSX.Element;
+	icon: ({ ...props }) => JSX.Element;
 }
 
 export const PROJECTS: Project[] = [

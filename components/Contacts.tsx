@@ -11,8 +11,8 @@ export const Contacts = () => (
 		<ul className='flex flex-wrap gap-3 md:gap-5'>
 			{LINKS.map(link => (
 				<li key={link.title}>
-					<Link className='flex items-center gap-1' href={link.url}>
-						<link.icon />
+					<Link className='flex items-center gap-2' href={link.url}>
+						<link.icon width={24} height={24} />
 						{link.title}
 					</Link>
 				</li>
