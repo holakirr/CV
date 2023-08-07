@@ -1,6 +1,5 @@
 import type { Project } from '@/ui/Project';
 import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, TelegramIcon } from '@/ui/icons';
-import { AdditionalItem } from './Additional';
 
 export interface Skill {
 	type: string;
@@ -63,14 +62,64 @@ export const PROJECTS: Project[] = [
 	},
 ];
 
-export const ADDITIONAL: AdditionalItem[] = [
+interface AdditionalItem {
+	title: string;
+	link?: string;
+	bold?: boolean;
+}
+
+export interface Additional {
+	name: string;
+	items: AdditionalItem[];
+}
+
+export const ADDITIONAL: Additional[] = [
 	{
 		name: 'Languages',
-		description: 'English (B2), Spanish (~A2), Russian (native)',
+		items: [
+			{
+				title: 'English (B2)',
+				bold: true,
+			},
+			{
+				title: 'Spanish (~A2)',
+			},
+			{
+				title: 'Russian (native)',
+			},
+		],
 	},
 	{
 		name: 'Udemy Courses',
-		description: 'Node.js, Mongo, GraphQL, MySQL, Express, NestJS, React+Next.js, Apollo GraphQL',
+		items: [
+			{
+				title: 'Node.JS',
+				link: 'https://ude.my/UC-7c27bd0d-8d74-40c2-ad2c-c7fe033d300b',
+			},
+			{
+				title: 'Node.JS + Mongo + GraphQL + Express + MySQL',
+				link: 'https://ude.my/UC-d26bce27-203a-4605-bc55-7bb6b49f91c4',
+				bold: true,
+			},
+			{
+				title: 'NestJS',
+				link: 'https://ude.my/UC-b0a39fe8-2502-4d9a-aa7e-527e3c87d7f0',
+			},
+			{
+				title: 'Apollo GraphQL',
+				link: 'https://www.apollographql.com/tutorials/certifications/995acb9d-9aae-431b-a882-3e3f0a2e8e7a',
+			},
+			{
+				title: 'React + Next.js',
+				link: 'https://ude.my/UC-252a2d36-5f14-41df-a93a-02d6bc4e2bef',
+				bold: true,
+			},
+			{
+				title: 'GoLang',
+				link: 'https://ude.my/UC-e3899d5c-6bea-460e-89e6-745468715575',
+				bold: true,
+			},
+		],
 	},
 ];
 

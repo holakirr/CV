@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { default as BaseLink, LinkProps as BaseLinkProps } from 'next/link';
 import { HTMLAttributes } from 'react';
 
-type LinkProps = BaseLinkProps & HTMLAttributes<HTMLAnchorElement>;
+export type LinkProps = BaseLinkProps & HTMLAttributes<HTMLAnchorElement>;
 
 export const Link = ({ className, href, children }: LinkProps) => {
 	return (

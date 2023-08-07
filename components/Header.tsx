@@ -4,12 +4,12 @@ import Image from 'next/image';
 import MeImage from '/public/me.jpg';
 
 export const Header = () => (
-	<header className='flex flex-col-reverse gap-16 md:gap-0 md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10'>
+	<header className='flex flex-col-reverse gap-16 md:gap-0 md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10 print:p-2 print:md:p-2 print:xl:p-2'>
 		{/* Text content */}
-		<div className='p-4 flex flex-col gap-3'>
+		<div className='p-4 flex flex-col gap-3 print:p-2'>
 			<Title className=''>Kirill Petunin</Title>
 			{/* Description */}
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-2 items-start'>
 				<address>
 					<Body>México, Guadalajara</Body>
 				</address>
@@ -27,7 +27,7 @@ export const Header = () => (
 		<Image
 			src={MeImage}
 			alt='Photo of me'
-			className='transition-all w-screen md:w-96 hover:rounded-3xl'
+			className='transition-all w-screen md:w-96 hover:rounded-3xl print:md:w-56'
 			width={384}
 			placeholder='blur'
 			blurDataURL={MeImage.blurDataURL}

@@ -16,7 +16,7 @@ export const Project = ({ title, role, description, dates, points }: ProjectProp
 		{/* Head */}
 		<div className='flex flex-col md:flex-row justify-between'>
 			<div className='flex flex-col md:flex-row md:items-baseline md:gap-2'>
-				<div className='flex flex-col md:flex-row md:gap-1'>
+				<div className='flex flex-col md:flex-row md:gap-1 flex-wrap'>
 					<Label>{title}</Label>
 					<Label>({description})</Label>
 				</div>
