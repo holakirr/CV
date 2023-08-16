@@ -1,5 +1,5 @@
 import type { Project } from '@/ui/Project';
-import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, TelegramIcon } from '@/ui/icons';
+import { GithubIcon, InstagramIcon, LinkedInIcon, MailIcon, PhoneIcon, TelegramIcon } from '@/ui/icons';
 
 export interface Skill {
 	type: string;
@@ -149,6 +149,11 @@ export const LINKS: Link[] = [
 		title: 'Telegram',
 		url: 'https://t.me/holakirr',
 		icon: TelegramIcon,
+	},
+	{
+		title: 'Instagram',
+		url: 'https://instagram.com/holakirr',
+		icon: InstagramIcon,
 	},
 	{
 		title: 'Email',

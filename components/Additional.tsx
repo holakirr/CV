@@ -3,9 +3,9 @@ import { ADDITIONAL } from './const';
 
 export const Additional = () => (
 	<Section subtitle='Additional Experience and Achievements'>
-		<ul className='flex flex-col gap-1 list-disc pl-4 md:pl-6'>
+		<ul className='flex flex-col gap-4 list-disc pl-4 md:pl-6'>
 			{ADDITIONAL.map(additional => (
-				<li key={additional.name}>
+				<li key={additional.name} className='max-w-3xl'>
 					<b>{additional.name}: </b>
 					{additional.items.map((item, i) => {
 						const addSemi = i !== additional.items.length - 1 ? ', ' : '';

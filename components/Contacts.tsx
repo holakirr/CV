@@ -6,7 +6,7 @@ export const Contacts = () => (
 	<Section
 		tag='footer'
 		subtitle='Links'
-		className='p-4 md:p-6 xl:p-10 flex flex-col gap-4 border-t-2 border-t-orange-700 items-start print:hidden'
+		className='p-4 md:p-6 xl:p-10 flex flex-col gap-6 border-t-2 border-t-orange-700 items-start print:hidden'
 	>
 		<ul className='flex flex-wrap gap-3 md:gap-5'>
 			{LINKS.map(link => (
