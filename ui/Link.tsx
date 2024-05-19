@@ -1,8 +1,10 @@
 import clsx from "clsx";
-import { default as BaseLink, LinkProps as BaseLinkProps } from "next/link";
-import { HTMLAttributes } from "react";
+import {
+	default as BaseLink,
+	type LinkProps as BaseLinkProps,
+} from "next/link";
 
-export type LinkProps = BaseLinkProps & HTMLAttributes<HTMLAnchorElement>;
+export type LinkProps = BaseLinkProps & React.ComponentProps<"a">;
 
 export const Link = ({ className, href, children }: LinkProps) => (
 	<BaseLink
@@ -14,6 +16,6 @@ export const Link = ({ className, href, children }: LinkProps) => (
 		target="_blank"
 	>
 		{children}
-		<div className="transition-all absolute bottom-0 left-0 w-full h-0 group-hover:h-[1px] bg-orange-700"></div>
+		<div className="transition-all absolute bottom-0 left-0 w-full h-0 group-hover:h-[1px] bg-orange-700" />
 	</BaseLink>
 );

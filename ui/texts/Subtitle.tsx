@@ -1,6 +1,4 @@
-import { HTMLAttributes } from "react";
-
-interface SubtitleProps extends HTMLAttributes<HTMLHeadingElement> {}
+type SubtitleProps = React.ComponentProps<"h2">;
 
 export const Subtitle = ({ className, children }: SubtitleProps) => (
 	<h2

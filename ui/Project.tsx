@@ -1,15 +1,14 @@
-import { HTMLAttributes } from "react";
 import { Body, ProjectPoint } from ".";
 
-export interface Project {
+export type Project = {
 	title: string;
 	description: string;
 	role: string;
 	dates: string;
 	points: string[];
-}
+};
 
-type ProjectProps = HTMLAttributes<HTMLDivElement> & Project;
+type ProjectProps = React.ComponentProps<"div"> & Project;
 
 export const Project = ({
 	title,
@@ -39,8 +38,8 @@ export const Project = ({
 		</div>
 		{/* Body */}
 		<ul className="flex flex-col gap-2 list-disc pl-4 md:pl-6">
-			{points.map((point, index) => (
-				<ProjectPoint key={index}>{point}</ProjectPoint>
+			{points.map((point) => (
+				<ProjectPoint key={point}>{point}</ProjectPoint>
 			))}
 		</ul>
 	</div>

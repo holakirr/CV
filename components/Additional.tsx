@@ -1,4 +1,5 @@
 import { Link, Section } from "@/ui";
+import { Fragment } from "react";
 import { ADDITIONAL } from "./const";
 
 export const Additional = () => (
@@ -11,7 +12,7 @@ export const Additional = () => (
 						const addSemi = i !== additional.items.length - 1 ? ", " : "";
 						const className = item.bold ? "font-bold" : "";
 						return (
-							<>
+							<Fragment key={item.title}>
 								{item.link ? (
 									<Link className={className} href={item.link} key={item.title}>
 										{item.title}
@@ -22,7 +23,7 @@ export const Additional = () => (
 									</span>
 								)}
 								{addSemi}
-							</>
+							</Fragment>
 						);
 					})}
 				</li>

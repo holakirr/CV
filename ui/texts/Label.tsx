@@ -1,7 +1,6 @@
 import clsx from "clsx";
-import { HTMLAttributes } from "react";
 
-interface LabelProps extends HTMLAttributes<HTMLParagraphElement> {}
+type LabelProps = React.ComponentProps<"p"> & {};
 
 export const Label = ({ className, children }: LabelProps) => (
 	<p className={clsx("font-bold text-lg", className)}>{children}</p>

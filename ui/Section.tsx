@@ -1,11 +1,10 @@
 import clsx from "clsx";
-import { HTMLAttributes } from "react";
 import { Subtitle } from ".";
 
-interface SectionProps extends HTMLAttributes<HTMLDivElement> {
+type SectionProps = React.ComponentProps<"section"> & {
 	subtitle: string;
 	tag?: "section" | "footer";
-}
+};
 
 export const Section = ({
 	subtitle,
