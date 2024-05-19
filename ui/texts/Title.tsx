@@ -1,6 +1,10 @@
-import clsx from 'clsx';
-import { HTMLAttributes } from 'react';
+import clsx from "clsx";
+import { HTMLAttributes } from "react";
 
 interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {}
 
-export const Title = ({ className, children }: TitleProps) => <h1 className={clsx('font-extrabold text-5xl print:text-3xl', className)}>{children}</h1>;
+export const Title = ({ className, children }: TitleProps) => (
+	<h1 className={clsx("font-extrabold text-5xl print:text-3xl", className)}>
+		{children}
+	</h1>
+);

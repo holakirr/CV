@@ -1,15 +1,15 @@
-import { Link, Section } from '@/ui';
-import { ADDITIONAL } from './const';
+import { Link, Section } from "@/ui";
+import { ADDITIONAL } from "./const";
 
 export const Additional = () => (
-	<Section subtitle='Additional Experience and Achievements'>
-		<ul className='flex flex-col gap-4 list-disc pl-4 md:pl-6'>
-			{ADDITIONAL.map(additional => (
-				<li key={additional.name} className='max-w-3xl'>
+	<Section subtitle="Additional Experience and Achievements">
+		<ul className="flex flex-col gap-4 list-disc pl-4 md:pl-6">
+			{ADDITIONAL.map((additional) => (
+				<li key={additional.name} className="max-w-3xl">
 					<b>{additional.name}: </b>
 					{additional.items.map((item, i) => {
-						const addSemi = i !== additional.items.length - 1 ? ', ' : '';
-						const className = item.bold ? 'font-bold' : '';
+						const addSemi = i !== additional.items.length - 1 ? ", " : "";
+						const className = item.bold ? "font-bold" : "";
 						return (
 							<>
 								{item.link ? (
