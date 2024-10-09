@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import Head from "next/head";
 import me from "../public/me.jpg";
 import "./globals.sass";
 
@@ -43,12 +42,6 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<Head>
-				{/* Open Graph */}
-				<meta property="og:image" content={me.src} />
-				{/* Twitter */}
-				<meta property="twitter:image" content={me.src} />
-			</Head>
 			<body className={jetBrainsMono.className}>{children}</body>
 		</html>
 	);
