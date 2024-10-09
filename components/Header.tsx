@@ -1,27 +1,32 @@
 import { Body, Label, Link, Title } from "@/ui";
 import Image from "next/image";
 
-import MeImage from "/public/me.jpg";
+import MeImage from "../public/me.jpg";
+import { PERSONAL, PROJECTS } from "./const";
 
 export const Header = () => (
 	<header className="flex flex-col-reverse gap-16 md:gap-4 print:flex-row md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10 print:p-2 print:md:p-2 print:xl:p-2 container mx-auto">
 		{/* Text content */}
 		<div className="p-4 flex flex-col gap-3 print:p-0">
-			<Title className="">Kirill Petunin</Title>
+			<Title className="">{PERSONAL.name}</Title>
 			{/* Description */}
 			<div className="flex flex-col gap-2 items-start">
 				<address>
-					<Body>México, Guadalajara</Body>
+					<Body>{PERSONAL.address}</Body>
 				</address>
-				<Link href="tel:+523343469939">
-					<Body>+52 3343469939</Body>
+				<Link href={`tel:${PERSONAL.phone}`}>
+					<Body>{PERSONAL.phone}</Body>
 				</Link>
-				<Link href="mailto:kpetunin@proton.me">
-					<Body>kpetunin@proton.me</Body>
+				<Link href={`mailto:${PERSONAL.mail}`}>
+					<Body>{PERSONAL.mail}</Body>
 				</Link>
 			</div>
 			<Label className="text-xl">
-				<u>Frontend developer, 5+ years</u>
+				<u>
+					{PERSONAL.position},{" "}
+					{new Date().getFullYear() - (PROJECTS[0]?.start?.getFullYear() ?? 0)}+
+					years
+				</u>
 			</Label>
 		</div>
 		<Image

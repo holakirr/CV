@@ -4,8 +4,9 @@ export type Project = {
 	title: string;
 	description: string;
 	role: string;
-	dates: string;
 	points: string[];
+	start?: Date;
+	end?: Date;
 };
 
 type ProjectProps = React.ComponentProps<"div"> & Project;
@@ -14,8 +15,9 @@ export const Project = ({
 	title,
 	role,
 	description,
-	dates,
 	points,
+	start,
+	end,
 }: ProjectProps) => (
 	<div className="flex flex-col gap-3">
 		{/* Head */}
@@ -33,7 +35,8 @@ export const Project = ({
 				<Body>{role}</Body>
 			</div>
 			<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
-				{dates}
+				{start?.toLocaleString("default", { month: "short", year: "numeric" })}{" "}
+				- {end?.toLocaleString("default", { month: "short", year: "numeric" })}
 			</Body>
 		</div>
 		{/* Body */}

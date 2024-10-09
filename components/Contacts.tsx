@@ -18,7 +18,7 @@ export const Contacts = () => (
 				</li>
 			))}
 		</ul>
-		<Button href="/cv.pdf" download="Kirill_Petunin_CV">
+		<Button href="/cv.pdf" download="Frontend_Engineer_CV">
 			Download CV
 		</Button>
 	</Section>

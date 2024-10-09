@@ -19,35 +19,34 @@ export interface Link {
 	icon: ({ ...props }) => JSX.Element;
 }
 
+export const PERSONAL = {
+	name: "Kirill Petunin",
+	address: "Everywhere",
+	phone: "+79956727623",
+	mail: "kpetunin@icloud.com",
+	position: "Senior Frontend Engineer",
+};
+
 export const PROJECTS: Project[] = [
 	{
-		title: "Grid Dynamics",
-		description: "engineering company",
-		role: "User Interface Engineer",
-		dates: "jun 2021 – present",
+		title: "Rerise",
+		description: "marketing agency",
+		role: "Web Developer",
+		start: new Date(2018, 8),
+		end: new Date(2020, 1),
 		points: [
-			"Contributed to the development of one of the biggest clothes shop, company focused on aligners production, American multinational home improvement retail corporation and internal project using Typescript, JavaScript, React, Redux, Ember and Node.js",
-			"Collaborated with cross-functional teams to define requirements, design system architectures, and implement scalable solutions",
-			"Played a key role in troubleshooting and resolving technical issues, ensuring the smooth operation of software applications",
-			"Mentored and onboarded junior team members, providing guidance and support to foster their professional growth",
-		],
-	},
-	{
-		title: "Globus-IT",
-		description: "engineering company",
-		role: "Frontend Developer",
-		dates: "sep 2020 – jun 2021",
-		points: [
-			"Led the development on two biggest bank companies' web application, utilizing React, Redux and Typescript to deliver robust and scalable solutions",
-			"Collaborated closely with product managers, designers, and other stakeholders to understand requirements and translate them into technical specifications",
-			"Implemented code optimization, performance tuning, and security considerations",
+			"Clarifying requirements with stakeholders",
+			"Developing functionality: from specifications review and coding to deployment",
+			"Managing all processes to create web-site for client from the scratch",
+			"Writing JavaScrip, CSS and pre-compilers (SCSS, Sass), HTML and PHP",
 		],
 	},
 	{
 		title: "Chitai Gorod",
 		description: "online bookstore",
 		role: "Frontend Developer",
-		dates: "feb 2020 – sep 2020",
+		start: new Date(2020, 1),
+		end: new Date(2020, 8),
 		points: [
 			"Gained hands-on experience as a software engineer in a fast-paced Chitai Gorod",
 			"Collaborated with the team to develop new payment method using JavaScript and HTML and other features",
@@ -56,15 +55,29 @@ export const PROJECTS: Project[] = [
 		],
 	},
 	{
-		title: "Rerise",
-		description: "marketing agency",
-		role: "Web Developer",
-		dates: "sep 2018 – feb 2020",
+		title: "Globus-IT",
+		description: "engineering company",
+		role: "Frontend Developer",
+		start: new Date(2020, 8),
+		end: new Date(2021, 5),
 		points: [
-			"Clarifying requirements with stakeholders",
-			"Developing functionality: from specifications review and coding to deployment",
-			"Managing all processes to create web-site for client from the scratch",
-			"Writing JavaScrip, CSS and pre-compilers (SCSS, Sass), HTML and PHP",
+			"Led the development on two biggest bank companies' web application, utilizing React, Redux and Typescript to deliver robust and scalable solutions",
+			"Collaborated closely with product managers, designers, and other stakeholders to understand requirements and translate them into technical specifications",
+			"Implemented code optimization, performance tuning, and security considerations",
+		],
+	},
+	{
+		title: "Grid Dynamics",
+		description: "engineering company",
+		role: "Software Engineer",
+		start: new Date(2021, 5),
+		end: new Date(2024, 7),
+		points: [
+			"Contributed to the development of different big companies and internal projects using Typescript, JavaScript, React, Redux, Ember.js, Java and Node.js.",
+			"Led the development of some projects.",
+			"Collaborated with cross-functional teams to define requirements, design system architectures, and implement scalable solutions.",
+			"Played a key role in troubleshooting and resolving technical issues, ensuring the smooth operation of software applications.",
+			"Mentored and onboarded junior team members, providing guidance and support to foster their professional growth.",
 		],
 	},
 ];
