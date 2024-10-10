@@ -1,3 +1,4 @@
+"use client";
 import { Additional, Contacts, Header, Projects, Skills } from "@/components";
 
 const Home = () => (

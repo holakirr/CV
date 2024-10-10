@@ -1,7 +1,10 @@
-import clsx from "clsx";
+"use client";
+import { TEXT_SIZES, Text } from "holakirr-snow-ui";
 
 type BodyProps = React.ComponentProps<"span">;
 
 export const Body = ({ className, children }: BodyProps) => (
-	<span className={clsx("font-normal text-base", className)}>{children}</span>
+	<Text as="span" className={className} size={TEXT_SIZES[16]}>
+		{children}
+	</Text>
 );

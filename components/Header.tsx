@@ -1,4 +1,6 @@
-import { Body, Label, Link, Title } from "@/ui";
+"use client";
+import { Body, Label } from "@/ui";
+import { Link, TEXT_SIZES, Text } from "holakirr-snow-ui";
 import Image from "next/image";
 
 import MeImage from "../public/me.jpg";
@@ -8,12 +10,14 @@ export const Header = () => (
 	<header className="flex flex-col-reverse gap-16 md:gap-4 print:flex-row md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10 print:p-2 print:md:p-2 print:xl:p-2 container mx-auto">
 		{/* Text content */}
 		<div className="p-4 flex flex-col gap-3 print:p-0">
-			<Title className="">{PERSONAL.name}</Title>
+			<Text as="h1" size={TEXT_SIZES[64]} semibold>
+				{PERSONAL.name}
+			</Text>
 			{/* Description */}
 			<div className="flex flex-col gap-2 items-start">
-				<address>
+				<Text as="address">
 					<Body>{PERSONAL.address}</Body>
-				</address>
+				</Text>
 				<Link href={`tel:${PERSONAL.phone}`}>
 					<Body>{PERSONAL.phone}</Body>
 				</Link>
@@ -21,7 +25,7 @@ export const Header = () => (
 					<Body>{PERSONAL.mail}</Body>
 				</Link>
 			</div>
-			<Label className="text-xl">
+			<Label>
 				<u>
 					{PERSONAL.position},{" "}
 					{new Date().getFullYear() - (PROJECTS[0]?.start?.getFullYear() ?? 0)}+
@@ -32,7 +36,7 @@ export const Header = () => (
 		<Image
 			src={MeImage}
 			alt="Photo of me"
-			className="transition-all w-screen md:w-96 hover:rounded-3xl print:md:w-56 print:w-48"
+			className="transition-all w-screen md:w-96 rounded-lg hover:rounded-3xl print:md:w-56 print:w-48"
 			width={384}
 			placeholder="blur"
 			blurDataURL={MeImage.blurDataURL}

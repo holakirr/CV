@@ -1,5 +1,6 @@
+"use client";
 import clsx from "clsx";
-import { Subtitle } from ".";
+import { TEXT_SIZES, Text } from "holakirr-snow-ui";
 
 type SectionProps = React.ComponentProps<"section"> & {
 	subtitle: string;
@@ -18,7 +19,9 @@ export const Section = ({
 			className,
 		)}
 	>
-		<Subtitle className="mb-4 print:mb-2">{subtitle}</Subtitle>
+		<Text as="h2" size={TEXT_SIZES[24]} semibold className="mb-4 print:mb-2">
+			{subtitle}
+		</Text>
 		{/* Content */}
 		<div className="flex flex-col gap-4 md:px-2">{children}</div>
 	</Tag>

@@ -1,4 +1,6 @@
-import { Link, Section } from "@/ui";
+"use client";
+import { Section } from "@/ui";
+import { Link } from "holakirr-snow-ui";
 import { Fragment } from "react";
 import { ADDITIONAL } from "./const";
 
