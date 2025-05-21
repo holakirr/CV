@@ -1,15 +1,15 @@
-import { Body, ProjectPoint } from ".";
+import { Body, ProjectPoint } from '.'
 
 export type Project = {
-	title: string;
-	description: string;
-	role: string;
-	points: string[];
-	start?: Date;
-	end?: Date;
-};
+	title: string
+	description: string
+	role: string
+	points: string[]
+	start?: Date
+	end?: Date
+}
 
-type ProjectProps = React.ComponentProps<"div"> & Project;
+type ProjectProps = React.ComponentProps<'div'> & Project
 
 export const Project = ({
 	title,
@@ -35,15 +35,15 @@ export const Project = ({
 				<Body>{role}</Body>
 			</div>
 			<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
-				{start?.toLocaleString("default", { month: "short", year: "numeric" })}{" "}
-				- {end?.toLocaleString("default", { month: "short", year: "numeric" })}
+				{start?.toLocaleString('en-US', { month: 'short', year: 'numeric' })} -{' '}
+				{end?.toLocaleString('en-US', { month: 'short', year: 'numeric' })}
 			</Body>
 		</div>
 		{/* Body */}
 		<ul className="flex flex-col gap-2 list-disc pl-4 md:pl-6">
-			{points.map((point) => (
+			{points.map(point => (
 				<ProjectPoint key={point}>{point}</ProjectPoint>
 			))}
 		</ul>
 	</div>
-);
+)
