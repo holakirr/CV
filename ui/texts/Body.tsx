@@ -1,5 +1,5 @@
 "use client";
-import { TEXT_SIZES, Text } from "holakirr-snow-ui";
+import { TEXT_SIZES, Text } from "@holakirr/snow-ui";
 
 type BodyProps = React.ComponentProps<"span">;
 

@@ -1,5 +1,5 @@
 "use client";
-import { Text } from "holakirr-snow-ui";
+import { Text } from "@holakirr/snow-ui";
 
 type ProjectPointProps = React.ComponentProps<"li">;
 

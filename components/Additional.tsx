@@ -1,6 +1,7 @@
 "use client";
 import { Section } from "@/ui";
-import { Link } from "holakirr-snow-ui";
+import { Link } from "@holakirr/snow-ui";
+import clsx from "clsx";
 import { Fragment } from "react";
 import { ADDITIONAL } from "./const";
 
@@ -16,7 +17,11 @@ export const Additional = () => (
 						return (
 							<Fragment key={item.title}>
 								{item.link ? (
-									<Link className={className} href={item.link} key={item.title}>
+									<Link
+										className={clsx("text-base", className)}
+										href={item.link}
+										key={item.title}
+									>
 										{item.title}
 									</Link>
 								) : (

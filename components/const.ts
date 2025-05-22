@@ -7,6 +7,7 @@ import {
 	PhoneIcon,
 	TelegramIcon,
 } from "@/ui/icons";
+import type { JSX } from "react";
 
 export interface Skill {
 	type: string;
@@ -78,6 +79,18 @@ export const PROJECTS: Project[] = [
 			"Collaborated with cross-functional teams to define requirements, design system architectures, and implement scalable solutions.",
 			"Played a key role in troubleshooting and resolving technical issues, ensuring the smooth operation of software applications.",
 			"Mentored and onboarded junior team members, providing guidance and support to foster their professional growth.",
+		],
+	},
+	{
+		title: "InnoTech",
+		description: "engineering company",
+		role: "Software Engineer",
+		start: new Date(2024, 10),
+		end: undefined,
+		points: [
+			"Improved testing process by implementing unit tests and e2e tests.",
+			"Participated in the development of a project related to crypto chains using Typescript, React, Redux, Remix.",
+			"Implemented a multiple features to the project.",
 		],
 	},
 ];

@@ -1,16 +1,15 @@
-"use client";
 import { Body, Label } from "@/ui";
-import { Link, TEXT_SIZES, Text } from "holakirr-snow-ui";
+import { Link, TEXT_SIZES, Text } from "@holakirr/snow-ui";
 import Image from "next/image";
 
 import MeImage from "../public/me.jpg";
 import { PERSONAL, PROJECTS } from "./const";
 
 export const Header = () => (
-	<header className="flex flex-col-reverse gap-16 md:gap-4 print:flex-row md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10 print:p-2 print:md:p-2 print:xl:p-2 container mx-auto">
+	<header className="flex flex-col-reverse gap-16 md:gap-4 print:flex-row md:flex-row justify-between items-center md:h-auto md:p-6 xl:p-10 print:p-2 container mx-auto">
 		{/* Text content */}
-		<div className="p-4 flex flex-col gap-3 print:p-0">
-			<Text as="h1" size={TEXT_SIZES[64]} semibold>
+		<div className="p-4 flex flex-col gap-3 print:p-0 print:gap-1">
+			<Text as="h1" size={TEXT_SIZES[64]} semibold className="print:text-2xl">
 				{PERSONAL.name}
 			</Text>
 			{/* Description */}
@@ -27,7 +26,7 @@ export const Header = () => (
 			</div>
 			<Label>
 				<u>
-					{PERSONAL.position},{" "}
+					{PERSONAL.position},&nbsp;
 					{new Date().getFullYear() - (PROJECTS[0]?.start?.getFullYear() ?? 0)}+
 					years
 				</u>

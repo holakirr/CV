@@ -1,6 +1,6 @@
 "use client";
+import { TEXT_SIZES, Text } from "@holakirr/snow-ui";
 import clsx from "clsx";
-import { TEXT_SIZES, Text } from "holakirr-snow-ui";
 
 type SectionProps = React.ComponentProps<"section"> & {
 	subtitle: string;

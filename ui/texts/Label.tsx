@@ -1,6 +1,6 @@
 "use client";
+import { Text } from "@holakirr/snow-ui";
 import clsx from "clsx";
-import { Text } from "holakirr-snow-ui";
 
 type LabelProps = React.ComponentProps<"p">;
 
