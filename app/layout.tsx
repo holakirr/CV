@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
 import me from "../public/me.jpg";
 import "./globals.css";
 
-const jetBrainsMono = JetBrains_Mono({
-	subsets: ["latin"],
-	display: "swap",
-	weight: ["800", "700", "400", "200"],
-});
 const title = "Kirill Petunin's CV";
 const description = "I am a frontend developer with 7+ years of experience";
 
@@ -44,7 +38,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={jetBrainsMono.className}>{children}</body>
+			<body>{children}</body>
 		</html>
 	);
 }
