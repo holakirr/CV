@@ -11,19 +11,12 @@ export type Project = {
 
 type ProjectProps = React.ComponentProps<"div"> & Project;
 
-export const Project = ({
-	title,
-	role,
-	description,
-	points,
-	start,
-	end,
-}: ProjectProps) => (
+export const Project = ({ title, role, description, points, start, end }: ProjectProps) => (
 	<div className="flex flex-col gap-3">
 		{/* Head */}
 		<div className="flex flex-col md:flex-row justify-between print:flex-row gap-2">
-			<div className="flex flex-col md:flex-row md:items-baseline gap-2 print:flex-row print:gap-2">
-				<div className="flex flex-col md:flex-row md:gap-1 flex-wrap print:flex-row">
+			<div className="flex flex-col md:flex-row md:items-baseline gap-2 print:flex-row">
+				<div className="flex flex-col md:flex-row md:gap-1 print:gap-1 flex-wrap print:flex-row">
 					<Body>
 						<b>{title}</b>
 					</Body>
@@ -36,9 +29,7 @@ export const Project = ({
 			</div>
 			<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
 				{start?.toLocaleString("en-US", { month: "short", year: "numeric" })} -{" "}
-				{end
-					? end?.toLocaleString("en-US", { month: "short", year: "numeric" })
-					: "Present"}
+				{end ? end?.toLocaleString("en-US", { month: "short", year: "numeric" }) : "Present"}
 			</Body>
 		</div>
 		{/* Body */}

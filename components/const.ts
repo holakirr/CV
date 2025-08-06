@@ -1,4 +1,5 @@
-import type { Project } from "@/ui/Project";
+import type { JSX } from "react";
+
 import {
 	GithubIcon,
 	InstagramIcon,
@@ -6,10 +7,10 @@ import {
 	MailIcon,
 	PhoneIcon,
 	TelegramIcon,
-} from "@/ui/icons";
-import type { JSX } from "react";
+} from "#/ui/icons";
+import type { Project } from "#/ui/Project";
 
-export interface Skill {
+export interface Technology {
 	type: string;
 	description: string;
 }
@@ -36,10 +37,9 @@ export const PROJECTS: Project[] = [
 		start: new Date(2018, 8),
 		end: new Date(2020, 1),
 		points: [
-			"Clarifying requirements with stakeholders",
-			"Developing functionality: from specifications review and coding to deployment",
-			"Managing all processes to create web-site for client from the scratch",
-			"Writing JavaScrip, CSS and pre-compilers (SCSS, Sass), HTML and PHP",
+			"Clarified requirements with stakeholders",
+			"Managed all processes to create web-site for client from the scratch",
+			"Worked with JavaScript, CSS and pre-compilers (SCSS, Sass), HTML and PHP",
 		],
 	},
 	{
@@ -49,7 +49,6 @@ export const PROJECTS: Project[] = [
 		start: new Date(2020, 1),
 		end: new Date(2020, 8),
 		points: [
-			"Gained hands-on experience as a software engineer in a fast-paced Chitai Gorod",
 			"Collaborated with the team to develop new payment method using JavaScript and HTML and other features",
 			"Assisted in requirements gathering and implementation, contributing to the successful delivery",
 			"Gained proficiency in JavaScript through practical application and self-directed learning",
@@ -101,12 +100,12 @@ interface AdditionalItem {
 	bold?: boolean;
 }
 
-export interface Additional {
+export interface Skill {
 	name: string;
 	items: AdditionalItem[];
 }
 
-export const ADDITIONAL: Additional[] = [
+export const SKILLS: Skill[] = [
 	{
 		name: "Languages",
 		items: [
@@ -115,7 +114,7 @@ export const ADDITIONAL: Additional[] = [
 				bold: true,
 			},
 			{
-				title: "Spanish (~A2)",
+				title: "Spanish (B1)",
 			},
 			{
 				title: "Russian (native)",
@@ -156,16 +155,14 @@ export const ADDITIONAL: Additional[] = [
 	},
 ];
 
-export const SKILLS: Skill[] = [
+export const TECHNOLOGIES: Technology[] = [
 	{
 		type: "Advanced",
-		description:
-			"HTML+CSS+JavaScript, React+REDUX, Typescript, Tailwind, SASS, Webpack, git",
+		description: "HTML+CSS+JavaScript, React+REDUX, Typescript, Tailwind, SASS, Webpack, git",
 	},
 	{
 		type: "Intermediate",
-		description:
-			"Node.js, Express, NestJS, MongoDB, MySQL, GraphQL, Apollo, Next.js, Ember.js",
+		description: "Node.js, Express, NestJS, MongoDB, MySQL, GraphQL, Apollo, Next.js, Ember.js",
 	},
 ];
 
