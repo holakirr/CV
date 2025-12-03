@@ -1,99 +1,100 @@
-import { Card, Link, Typography } from "@holakirr/snow-ui";
+import {
+	Link,
+	Tag,
+	TEXT_SIZES,
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+	Typography,
+} from "@holakirr/snow-ui";
 import { SnowUIIcon } from "@holakirr/snow-ui-icons";
 
 import { Section } from "#/ui";
 import { GithubIcon, NpmIcon, StoryBookIcon, TelegramIcon } from "#/ui/icons";
 
-export const Developed = () => {
-	return (
-		<Section subtitle="Developed" className="border-t-4 border-t-black print:border-0">
-			<Card bordered>
-				<div className="flex gap-2 items-center">
-					<SnowUIIcon width={20} height={20} />
-					<Typography>Snow UI React Library</Typography>
-				</div>
-				<div className="flex gap-4">
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://www.npmjs.com/package/@holakirr/snow-ui"
-					>
-						<NpmIcon width={20} height={20} />
-						Npm
+export const Developed = () => (
+	<Section title="Pets">
+		<div className="flex flex-col gap-3">
+			<div className="flex flex-col gap-1">
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipContent>React Components Library</TooltipContent>
+						<TooltipTrigger className="flex gap-1 items-center">
+							<SnowUIIcon width={20} height={20} />
+							<Typography size={TEXT_SIZES[14]}>Snow UI</Typography>
+						</TooltipTrigger>
+					</Tooltip>
+				</TooltipProvider>
+				<div className="flex gap-1">
+					<Link target="_blank" href="https://www.npmjs.com/package/@holakirr/snow-ui">
+						<Tag label="Npm" leftContent={<NpmIcon width={14} height={14} />} className="gap-1" />
 					</Link>
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://github.com/holakirr/snow-ui/tree/main"
-					>
-						<GithubIcon width={20} height={20} />
-						Github
+					<Link target="_blank" href="https://github.com/holakirr/snow-ui/tree/main">
+						<Tag
+							label="Github"
+							leftContent={<GithubIcon width={14} height={14} />}
+							className="gap-1"
+						/>
 					</Link>
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://snow-ui.holakirr.com/"
-					>
-						<StoryBookIcon width={20} height={20} />
-						Storybook
+					<Link target="_blank" href="https://github.com/holakirr/snow-ui/tree/main">
+						<Tag
+							label="Storybook"
+							leftContent={<StoryBookIcon width={14} height={14} />}
+							className="gap-1"
+						/>
 					</Link>
 				</div>
-				<Typography className="text-xs">
-					Designed by
-					<Link href="https://snowui.byewind.com" className="ml-1" target="_blank">
-						byewind
+			</div>
+			<div className="flex flex-col gap-1">
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipContent>React Icons Library</TooltipContent>
+						<TooltipTrigger className="flex gap-1 items-center">
+							<SnowUIIcon width={20} height={20} />
+							<Typography size={TEXT_SIZES[14]}>Snow UI Icons</Typography>
+						</TooltipTrigger>
+					</Tooltip>
+				</TooltipProvider>
+				<div className="flex gap-1">
+					<Link target="_blank" href="https://www.npmjs.com/package/@holakirr/snow-ui-icons">
+						<Tag label="Npm" leftContent={<NpmIcon width={14} height={14} />} className="gap-1" />
 					</Link>
-				</Typography>
-			</Card>
-			<Card bordered>
-				<div className="flex gap-2 items-center">
-					<SnowUIIcon width={20} height={20} />
-					<Typography>Snow UI React Icons Library</Typography>
-				</div>
-				<div className="flex gap-4">
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://www.npmjs.com/package/@holakirr/snow-ui-icons"
-					>
-						<NpmIcon width={20} height={20} />
-						Npm
+					<Link target="_blank" href="https://github.com/holakirr/snow-ui-icons/tree/main">
+						<Tag
+							label="Github"
+							leftContent={<GithubIcon width={14} height={14} />}
+							className="gap-1"
+						/>
 					</Link>
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://github.com/holakirr/snow-ui-icons/tree/main"
-					>
-						<GithubIcon width={20} height={20} />
-						Github
-					</Link>
-					<Link
-						className="text-base flex items-center gap-2"
-						target="_blank"
-						href="https://snow-ui-icons.holakirr.com/"
-					>
-						<StoryBookIcon width={20} height={20} />
-						Storybook
+					<Link target="_blank" href="https://snow-ui-icons.holakirr.com/">
+						<Tag
+							label="Storybook"
+							leftContent={<StoryBookIcon width={14} height={14} />}
+							className="gap-1"
+						/>
 					</Link>
 				</div>
-				<Typography className="text-xs">
-					Designed by
-					<Link href="https://snowui.byewind.com" className="ml-1" target="_blank">
-						byewind
+			</div>
+			<div className="flex flex-col gap-1">
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipContent>Distribution Bot</TooltipContent>
+						<TooltipTrigger className="flex gap-1 items-center">
+							<Typography size={TEXT_SIZES[14]}>VPN</Typography>
+						</TooltipTrigger>
+					</Tooltip>
+				</TooltipProvider>
+				<div className="flex gap-1">
+					<Link target="_blank" href="https://t.me/holakirr_vpn_bot">
+						<Tag
+							label="Telegram"
+							leftContent={<TelegramIcon width={14} height={14} />}
+							className="gap-1"
+						/>
 					</Link>
-				</Typography>
-			</Card>
-			<Card bordered className="flex flex-col">
-				<Typography>VPN</Typography>
-				<Link
-					className="text-base flex items-center gap-2"
-					target="_blank"
-					href="https://t.me/holakirr_vpn_bot"
-				>
-					<TelegramIcon width={20} height={20} />
-					Telegram
-				</Link>
-			</Card>
-		</Section>
-	);
-};
+				</div>
+			</div>
+		</div>
+	</Section>
+);

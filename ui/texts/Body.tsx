@@ -1,9 +1,7 @@
-import { TEXT_SIZES, Typography } from "@holakirr/snow-ui";
+import { TEXT_SIZES, type TextProps, Typography } from "@holakirr/snow-ui";
 
-type BodyProps = React.ComponentProps<"span">;
-
-export const Body = ({ className, children }: BodyProps) => (
-	<Typography as="span" className={className} size={TEXT_SIZES[16]}>
+export const Body = ({ className, children, as }: TextProps) => (
+	<Typography as={as} className={className} size={TEXT_SIZES[14]}>
 		{children}
 	</Typography>
 );

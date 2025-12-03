@@ -1,3 +1,4 @@
+export { Bio } from "./Bio";
 export { Contacts } from "./Contacts";
 export { Developed } from "./Developed";
 export { Header } from "./Header";

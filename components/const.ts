@@ -1,13 +1,6 @@
 import type { JSX } from "react";
 
-import {
-	GithubIcon,
-	InstagramIcon,
-	LinkedInIcon,
-	MailIcon,
-	PhoneIcon,
-	TelegramIcon,
-} from "#/ui/icons";
+import { GithubIcon, InstagramIcon, LinkedInIcon, TelegramIcon } from "#/ui/icons";
 import type { Project } from "#/ui/Project";
 
 export interface Technology {
@@ -22,17 +15,19 @@ export interface Link {
 }
 
 export const PERSONAL = {
-	name: "Kirill Petunin",
-	address: "Everywhere",
+	firstName: "Kirill",
+	lastName: "Petunin",
+	address: "Kazan, Russia",
 	phone: "+79956727623",
 	mail: "kpetunin@icloud.com",
-	position: "Senior Frontend Engineer",
+	website: "holakirr.com",
+	position: "Senior Software Engineer",
+	bio: "Senior Frontend Developer with 7+ years building scalable web applications for international companies. Expert in React, TypeScript, Node.js, and Nest.js with proven track record in performance optimization and team leadership. Created open-source SnowUI library. Fluent in English (C1-C2), experienced in Agile/Scrum environments, open to remote opportunities worldwide.",
 };
 
 export const PROJECTS: Project[] = [
 	{
 		title: "Rerise",
-		description: "marketing agency",
 		role: "Web Developer",
 		start: new Date(2018, 8),
 		end: new Date(2020, 1),
@@ -44,7 +39,6 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		title: "Chitai Gorod",
-		description: "online bookstore",
 		role: "Frontend Developer",
 		start: new Date(2020, 1),
 		end: new Date(2020, 8),
@@ -56,7 +50,6 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		title: "Globus-IT",
-		description: "engineering company",
 		role: "Frontend Developer",
 		start: new Date(2020, 8),
 		end: new Date(2021, 5),
@@ -68,8 +61,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		title: "Grid Dynamics",
-		description: "engineering company",
-		role: "Software Engineer",
+		role: "Software Engineer / Team Lead",
 		start: new Date(2021, 5),
 		end: new Date(2024, 7),
 		points: [
@@ -81,88 +73,71 @@ export const PROJECTS: Project[] = [
 		],
 	},
 	{
-		title: "InnoTech",
-		description: "engineering company",
+		title: "T1 Innotech",
 		role: "Software Engineer",
 		start: new Date(2024, 10),
 		end: undefined,
 		points: [
-			"Improved testing process by implementing unit tests and e2e tests.",
-			"Participated in the development of a project related to crypto chains using Typescript, React, Redux, Remix.",
-			"Implemented a multiple features to the project.",
+			"Development and maintenance of cryptocurrency project using modern stack: React, Remix, Nest.js, Node.js",
+			"Extracted part of monolithic application into microservice (BFF and frontend components), improving architectural scalability",
+			"Ensured high code quality and adherence to best practices within the team",
 		],
 	},
 ];
 
-interface AdditionalItem {
+interface Skill {
 	title: string;
-	link?: string;
-	bold?: boolean;
+	link: string;
 }
 
-export interface Skill {
-	name: string;
-	items: AdditionalItem[];
-}
-
-export const SKILLS: Skill[] = [
+export const CERTIFICATIONS: Skill[] = [
 	{
-		name: "Languages",
-		items: [
-			{
-				title: "English (B2)",
-				bold: true,
-			},
-			{
-				title: "Spanish (B1)",
-			},
-			{
-				title: "Russian (native)",
-			},
-		],
+		title: "Node.JS",
+		link: "https://ude.my/UC-7c27bd0d-8d74-40c2-ad2c-c7fe033d300b",
 	},
 	{
-		name: "Udemy Courses",
-		items: [
-			{
-				title: "Node.JS",
-				link: "https://ude.my/UC-7c27bd0d-8d74-40c2-ad2c-c7fe033d300b",
-			},
-			{
-				title: "Node.JS + Mongo + GraphQL + Express + MySQL",
-				link: "https://ude.my/UC-d26bce27-203a-4605-bc55-7bb6b49f91c4",
-				bold: true,
-			},
-			{
-				title: "NestJS",
-				link: "https://ude.my/UC-b0a39fe8-2502-4d9a-aa7e-527e3c87d7f0",
-			},
-			{
-				title: "Apollo GraphQL",
-				link: "https://www.apollographql.com/tutorials/certifications/995acb9d-9aae-431b-a882-3e3f0a2e8e7a",
-			},
-			{
-				title: "React + Next.js",
-				link: "https://ude.my/UC-252a2d36-5f14-41df-a93a-02d6bc4e2bef",
-				bold: true,
-			},
-			{
-				title: "GoLang",
-				link: "https://ude.my/UC-e3899d5c-6bea-460e-89e6-745468715575",
-				bold: true,
-			},
-		],
+		title: "Node.JS + Mongo + GraphQL + Express + MySQL",
+		link: "https://ude.my/UC-d26bce27-203a-4605-bc55-7bb6b49f91c4",
+	},
+	{
+		title: "NestJS",
+		link: "https://ude.my/UC-b0a39fe8-2502-4d9a-aa7e-527e3c87d7f0",
+	},
+	{
+		title: "Apollo GraphQL",
+		link: "https://www.apollographql.com/tutorials/certifications/995acb9d-9aae-431b-a882-3e3f0a2e8e7a",
+	},
+	{
+		title: "React + Next.js",
+		link: "https://ude.my/UC-252a2d36-5f14-41df-a93a-02d6bc4e2bef",
+	},
+	{
+		title: "GoLang",
+		link: "https://ude.my/UC-e3899d5c-6bea-460e-89e6-745468715575",
 	},
 ];
 
-export const TECHNOLOGIES: Technology[] = [
+export const TECH_STACK: Technology[] = [
 	{
-		type: "Advanced",
-		description: "HTML+CSS+JavaScript, React+REDUX, Typescript, Tailwind, SASS, Webpack, git",
+		type: "Frontend",
+		description:
+			"TypeScript, JavaScript (ES6+), Remix, Ember.js, Next.js, React, HTML5, CSS3, TailwindCSS, Styled Components",
 	},
 	{
-		type: "Intermediate",
-		description: "Node.js, Express, NestJS, MongoDB, MySQL, GraphQL, Apollo, Next.js, Ember.js",
+		type: "Backend",
+		description: "Node.js, Nest.js, Express.js, REST API, GraphQL, Microservices",
+	},
+	{
+		type: "Tools",
+		description: "Git, Docker, Webpack, Vite, Bun, CI/CD, GitHub Actions",
+	},
+	{
+		type: "Testing",
+		description: "Vitest, React Testing Library, Playwright, Jest",
+	},
+	{
+		type: "Soft",
+		description: "Agile, Scrum, Code Review, Mentoring",
 	},
 ];
 
@@ -186,15 +161,5 @@ export const LINKS: Link[] = [
 		title: "Instagram",
 		url: "https://instagram.com/holakirr",
 		icon: InstagramIcon,
-	},
-	{
-		title: "Email",
-		url: "mailto:kpetunin@proton.me",
-		icon: MailIcon,
-	},
-	{
-		title: "Phone",
-		url: "tel:+523343469939",
-		icon: PhoneIcon,
 	},
 ];

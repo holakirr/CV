@@ -6,3 +6,4 @@ export { Npm as NpmIcon } from "./Npm";
 export { Phone as PhoneIcon } from "./Phone";
 export { StoryBook as StoryBookIcon } from "./StoryBook";
 export { Telegram as TelegramIcon } from "./Telegram";
+export { Web as WebIcon } from "./Web";

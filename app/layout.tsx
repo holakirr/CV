@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { DESCRIPTION, TITLE } from "#/constants/meta";
-import me from "#/public/me.jpg";
+import MeImage from "#/public/me.jpg";
 import "./globals.css";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
 	title: TITLE,
@@ -16,27 +17,31 @@ export const metadata: Metadata = {
 			url: "https://github.com/holakirr",
 		},
 	],
+	metadataBase: new URL("https://holakirr.com/"),
 	openGraph: {
 		title: TITLE,
 		description: DESCRIPTION,
 		type: "website",
 		locale: "en_US",
-		images: [me.src],
+		images: [MeImage.src],
 		url: "https://holakirr.com/",
 	},
 	twitter: {
 		title: TITLE,
 		description: DESCRIPTION,
-		images: [me.src],
+		images: [MeImage.src],
 	},
 };
 
-const inter = Inter({ subsets: ["cyrillic", "latin"] });
+const inter = Inter({
+	subsets: ["cyrillic", "latin"],
+	weight: ["200", "500", "700", "800"],
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={clsx(inter.className, "bg-orange-100")}>{children}</body>
 		</html>
 	);
 }

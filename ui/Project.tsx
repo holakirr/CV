@@ -1,8 +1,8 @@
-import { Body, ProjectPoint } from ".";
+import clsx from "clsx";
+import { Body } from ".";
 
 export type Project = {
 	title: string;
-	description: string;
 	role: string;
 	points: string[];
 	start?: Date;
@@ -11,31 +11,43 @@ export type Project = {
 
 type ProjectProps = React.ComponentProps<"div"> & Project;
 
-export const Project = ({ title, role, description, points, start, end }: ProjectProps) => (
-	<div className="flex flex-col gap-3">
+export const Project = ({ title, role, points, start, end }: ProjectProps) => (
+	<div
+		className={clsx(
+			"relative flex flex-col gap-1 print:break-inside-avoid",
+			"before:content-none md:before:content-[''] before:absolute before:w-2 before:h-2 before:bg-gray-400 before:rounded-full before:-left-4 before:top-4",
+			"after:content-none md:after:content-[''] after:absolute after:w-4 after:h-4 after:border after:border-gray-400 after:rounded-full after:-left-5 after:top-3"
+		)}
+	>
 		{/* Head */}
-		<div className="flex flex-col md:flex-row justify-between print:flex-row gap-2">
-			<div className="flex flex-col md:flex-row md:items-baseline gap-2 print:flex-row">
-				<div className="flex flex-col md:flex-row md:gap-1 print:gap-1 flex-wrap print:flex-row">
-					<Body>
-						<b>{title}</b>
-					</Body>
-					<Body>
-						<b>({description})</b>
-					</Body>
-				</div>
-				<Body className="hidden md:block">&#8212;</Body>
-				<Body>{role}</Body>
+		<div className="flex gap-x-2">
+			<div className="flex flex-col">
+				<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
+					{start?.toLocaleString("en-US", { month: "short", year: "numeric" })}
+				</Body>
+
+				<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
+					{end ? end?.toLocaleString("en-US", { month: "short", year: "numeric" }) : "Present"}
+				</Body>
 			</div>
-			<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
-				{start?.toLocaleString("en-US", { month: "short", year: "numeric" })} -{" "}
-				{end ? end?.toLocaleString("en-US", { month: "short", year: "numeric" }) : "Present"}
-			</Body>
+
+			<hr className="w-px h-auto bg-gray-200" />
+
+			<div className="flex flex-col">
+				<Body>{title}</Body>
+
+				<Body className="font-bold uppercase">{role}</Body>
+			</div>
 		</div>
+
+		<hr />
+
 		{/* Body */}
-		<ul className="flex flex-col gap-2 list-disc pl-4 md:pl-6">
+		<ul className="flex flex-col list-disc pl-4">
 			{points.map((point) => (
-				<ProjectPoint key={point}>{point}</ProjectPoint>
+				<li key={point} className="list-item text-sm max-w-3xl">
+					{point}
+				</li>
 			))}
 		</ul>
 	</div>

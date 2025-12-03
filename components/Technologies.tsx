@@ -1,14 +1,13 @@
-import { Section } from "#/ui";
-import { TECHNOLOGIES } from "./const";
+import { Body, Section } from "#/ui";
+import { TECH_STACK } from "./const";
 
 export const Technologies = () => (
-	<Section subtitle="Tech Stack" className="print:mt-8">
-		<ul className="flex flex-col gap-4 list-disc pl-4 md:pl-6">
-			{TECHNOLOGIES.map((item) => (
-				<li key={item.type} className="max-w-3xl">
-					<u>{item.type}:</u> {item.description}
-				</li>
-			))}
-		</ul>
+	<Section title="Tech Stack" className="print:mt-8">
+		{TECH_STACK.map((item) => (
+			<div key={item.type} className="flex flex-col">
+				<Body className="underline underline-offset-4">{item.type}:</Body>
+				<Body className="pl-2">{item.description}</Body>
+			</div>
+		))}
 	</Section>
 );
