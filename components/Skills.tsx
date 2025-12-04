@@ -1,10 +1,12 @@
+'use client'
+
 import { Link } from '@holakirr/snow-ui'
-import { getTranslate } from '#/tolgee/server'
+import { useTranslate } from '@tolgee/react'
 import { Section } from '#/ui'
 import { CERTIFICATIONS } from './const'
 
-export const Skills = async () => {
-	const t = await getTranslate()
+export const Skills = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section title={t('certificates.title')}>

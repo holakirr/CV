@@ -1,6 +1,8 @@
+'use client'
+
+import { useTranslate } from '@tolgee/react'
 import clsx from 'clsx'
 import type { ComponentProps } from 'react'
-import { getTranslate } from '#/tolgee/server'
 import { Body } from '.'
 
 export type ProjectData = {
@@ -13,8 +15,8 @@ type ProjectProps = ComponentProps<'div'> &
 		index: number
 	}
 
-export const Project = async ({ start, end, index }: ProjectProps) => {
-	const t = await getTranslate()
+export const Project = ({ start, end, index }: ProjectProps) => {
+	const { t } = useTranslate()
 
 	return (
 		<div
@@ -56,12 +58,12 @@ export const Project = async ({ start, end, index }: ProjectProps) => {
 
 			{/* Body */}
 			<ul className="flex flex-col list-disc pl-4">
-				{new Array(3).fill(0).map((_, index) => (
+				{new Array(3).fill(0).map((_, i) => (
 					<li
-						key={t(`jobs.projects[${index}].points[${index}]`)}
+						key={t(`jobs.projects[${index}].points[${i}]`)}
 						className="list-item text-sm max-w-3xl"
 					>
-						{t(`jobs.projects[${index}].points[${index}]`)}
+						{t(`jobs.projects[${index}].points[${i}]`)}
 					</li>
 				))}
 			</ul>

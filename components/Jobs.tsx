@@ -1,9 +1,11 @@
-import { getTranslate } from '#/tolgee/server'
+'use client'
+
+import { useTranslate } from '@tolgee/react'
 import { Project, Section } from '#/ui'
 import { PROJECTS } from './const'
 
-export const Jobs = async () => {
-	const t = await getTranslate()
+export const Jobs = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section title={t('jobs.title')}>

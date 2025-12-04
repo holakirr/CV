@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	Link,
 	Tag,
@@ -9,12 +11,12 @@ import {
 	Typography,
 } from '@holakirr/snow-ui'
 import { SnowUIIcon } from '@holakirr/snow-ui-icons'
-import { getTranslate } from '#/tolgee/server'
+import { useTranslate } from '@tolgee/react'
 import { Section } from '#/ui'
 import { GithubIcon, NpmIcon, StoryBookIcon, TelegramIcon } from '#/ui/icons'
 
-export const Developed = async () => {
-	const t = await getTranslate()
+export const Developed = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section title={t('pets.title')}>

@@ -1,10 +1,12 @@
+'use client'
+
 import { Link } from '@holakirr/snow-ui'
-import { getTranslate } from '#/tolgee/server'
+import { useTranslate } from '@tolgee/react'
 import { Body, Section } from '#/ui'
 import { LINKS } from './const'
 
-export const Contacts = async () => {
-	const t = await getTranslate()
+export const Contacts = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section tag="footer" title={t('social.title')}>

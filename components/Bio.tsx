@@ -1,8 +1,10 @@
-import { getTranslate } from '#/tolgee/server'
+'use client'
+
+import { useTranslate } from '@tolgee/react'
 import { Body, Section } from '#/ui'
 
-export const Bio = async () => {
-	const t = await getTranslate()
+export const Bio = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section title={t('profile.title')}>

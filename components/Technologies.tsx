@@ -1,9 +1,11 @@
-import { getTranslate } from '#/tolgee/server'
+'use client'
+
+import { useTranslate } from '@tolgee/react'
 import { Body, Section } from '#/ui'
 import { TECH_STACK } from './const'
 
-export const Technologies = async () => {
-	const t = await getTranslate()
+export const Technologies = () => {
+	const { t } = useTranslate()
 
 	return (
 		<Section title={t('stack.title')} className="print:mt-8">

@@ -1,14 +1,16 @@
-import { Link, Tag, TEXT_SIZES, Typography } from "@holakirr/snow-ui";
-import Image from "next/image";
+'use client'
 
-import MeImage from "#/public/me.jpeg";
-import { getTranslate } from "#/tolgee/server";
-import { Body } from "#/ui";
-import { MailIcon, PhoneIcon, WebIcon } from "#/ui/icons";
-import { CONTACTS } from "./const";
+import { Link, Tag, TEXT_SIZES, Typography } from '@holakirr/snow-ui'
+import { useTranslate } from '@tolgee/react'
+import Image from 'next/image'
 
-export const Header = async () => {
-	const t = await getTranslate();
+import MeImage from '#/public/me.jpeg'
+import { Body } from '#/ui'
+import { MailIcon, PhoneIcon, WebIcon } from '#/ui/icons'
+import { CONTACTS } from './const'
+
+export const Header = () => {
+	const { t } = useTranslate()
 
 	return (
 		<header className="flex flex-col gap-6 print:flex-row md:flex-row md:items-center print:items-center">
@@ -24,9 +26,14 @@ export const Header = async () => {
 
 			<div className="flex flex-1 flex-col gap-1 justify-between">
 				<div className="flex flex-col py-5 md:py-10">
-					<Typography as="h1" size={TEXT_SIZES[48]} semibold className="space-x-2 uppercase">
-						<span className="text-black">{t("personal.firstName")}</span>
-						<span>{t("personal.lastName")}</span>
+					<Typography
+						as="h1"
+						size={TEXT_SIZES[48]}
+						semibold
+						className="flex gap-x-2 flex-wrap uppercase"
+					>
+						<span className="text-black">{t('personal.firstName')}</span>
+						<span>{t('personal.lastName')}</span>
 					</Typography>
 					<Typography
 						as="h2"
@@ -34,7 +41,7 @@ export const Header = async () => {
 						semibold
 						className="leading-6 uppercase text-gray-500"
 					>
-						{t("personal.position")}
+						{t('personal.position')}
 					</Typography>
 				</div>
 
@@ -43,20 +50,26 @@ export const Header = async () => {
 				{/* Description */}
 				<div className="flex flex-col gap-2 items-start">
 					<div className="flex gap-1">
-						<Tag label={t("personal.address")} />
+						<Tag label={t('personal.address')} />
 
-						<Tag label={t("personal.geo")} />
+						<Tag label={t('personal.geo')} />
 
-						<Tag label={t("personal.workFormat")} />
+						<Tag label={t('personal.workFormat')} />
 					</div>
 
 					<div className="flex gap-x-2 flex-wrap">
-						<Link href={`tel:${CONTACTS.phone}`} className="flex gap-1 items-center">
+						<Link
+							href={`tel:${CONTACTS.phone}`}
+							className="flex gap-1 items-center"
+						>
 							<PhoneIcon />
 							<Body>{CONTACTS.phone}</Body>
 						</Link>
 
-						<Link href={`mailto:${CONTACTS.mail}`} className="flex gap-1 items-center">
+						<Link
+							href={`mailto:${CONTACTS.mail}`}
+							className="flex gap-1 items-center"
+						>
 							<MailIcon />
 							<Body>{CONTACTS.mail}</Body>
 						</Link>
@@ -75,5 +88,5 @@ export const Header = async () => {
 				<hr />
 			</div>
 		</header>
-	);
-};
+	)
+}
