@@ -18,6 +18,8 @@ export const Header = () => {
 				src={MeImage}
 				alt="Photo of me"
 				className="transition-all w-screen md:size-60 print:size-60"
+				width={440}
+				height={440}
 				placeholder="blur"
 				blurDataURL={MeImage.blurDataURL}
 				loading="lazy"

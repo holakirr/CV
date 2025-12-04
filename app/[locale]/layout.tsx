@@ -6,9 +6,9 @@ import MeImage from '#/public/me.jpeg'
 import { TolgeeNextProvider } from '#/tolgee/client'
 import { getLanguage } from '#/tolgee/language'
 import { getTolgee } from '#/tolgee/server'
+import { DownloadCVBtn } from '#/ui/DownloadCVButton'
 import { LocaleSwitcher } from '#/ui/LocaleSwitcher'
 import '../globals.css'
-import { DownloadCVBtn } from '#/ui/DownloadCVButton'
 
 export const metadata: Metadata = {
 	title: TITLE,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: MeImage.src,
-				width: 1200,
+				width: 630,
 				height: 630,
 				alt: 'Kirill Petunin - Senior Frontend Developer',
 			},
