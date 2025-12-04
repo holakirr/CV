@@ -1,18 +1,19 @@
 import clsx from 'clsx'
+import type { ComponentProps } from 'react'
 import { getTranslate } from '#/tolgee/server'
 import { Body } from '.'
 
-export type Project = {
+export type ProjectData = {
 	start: Date
 	end?: Date
 }
 
-type ProjectProps = React.ComponentProps<'div'> &
-	Project & {
-		id: number
+type ProjectProps = ComponentProps<'div'> &
+	ProjectData & {
+		index: number
 	}
 
-export const Project = async ({ start, end, id }: ProjectProps) => {
+export const Project = async ({ start, end, index }: ProjectProps) => {
 	const t = await getTranslate()
 
 	return (
@@ -43,10 +44,10 @@ export const Project = async ({ start, end, id }: ProjectProps) => {
 				<hr className="w-px h-auto bg-gray-200" />
 
 				<div className="flex flex-col">
-					<Body>{t(`jobs.projects[${id}].title`)}</Body>
+					<Body>{t(`jobs.projects[${index}].title`)}</Body>
 
 					<Body className="font-bold uppercase">
-						{t(`jobs.projects[${id}].role`)}
+						{t(`jobs.projects[${index}].role`)}
 					</Body>
 				</div>
 			</div>
@@ -57,10 +58,10 @@ export const Project = async ({ start, end, id }: ProjectProps) => {
 			<ul className="flex flex-col list-disc pl-4">
 				{new Array(3).fill(0).map((_, index) => (
 					<li
-						key={t(`jobs.projects[${id}].points[${index}]`)}
+						key={t(`jobs.projects[${index}].points[${index}]`)}
 						className="list-item text-sm max-w-3xl"
 					>
-						{t(`jobs.projects[${id}].points[${index}]`)}
+						{t(`jobs.projects[${index}].points[${index}]`)}
 					</li>
 				))}
 			</ul>

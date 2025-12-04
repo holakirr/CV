@@ -6,7 +6,7 @@ import {
 	LinkedInIcon,
 	TelegramIcon,
 } from '#/ui/icons'
-import type { Project } from '#/ui/Project'
+import type { ProjectData } from '#/ui/Project'
 
 export interface Technology {
 	type: string
@@ -56,7 +56,7 @@ export const CONTACTS = {
  * t('jobs.projects[4].points[1]')
  * t('jobs.projects[4].points[2]')
  */
-export const PROJECTS: Project[] = [
+export const PROJECTS: ProjectData[] = [
 	{
 		start: new Date(2018, 8),
 		end: new Date(2020, 1),
