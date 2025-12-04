@@ -81,6 +81,10 @@ const inter = Inter({
 	weight: ['200', '500', '700', '800'],
 })
 
+export function generateStaticParams() {
+	return [{ locale: 'en' }, { locale: 'ru' }]
+}
+
 export default async function LocaleLayout({
 	children,
 	params,
