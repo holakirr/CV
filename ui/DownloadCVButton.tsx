@@ -13,7 +13,7 @@ export const DownloadCVBtn = ({ locale }: { locale: string }) => {
 	return (
 		<Button
 			onClick={() => downloadHandler(locale)}
-			className="fixed bottom-5 right-5 md:bottom-10 md:right-10 group print:hidden"
+			className="fixed bottom-5 right-5 md:bottom-10 md:right-10 group print:hidden z-10"
 			variant="filled"
 			size="lg"
 			label={t('common.actions.download')}

@@ -17,7 +17,7 @@ export const LocaleSwitcher = ({ locale }: { locale: string }) => {
 			type="single"
 			onValueChange={changeHandler}
 			value={locale}
-			className="fixed bottom-5 left-5 md:bottom-10 md:left-10 print:hidden"
+			className="fixed bottom-5 left-5 md:bottom-10 md:left-10 print:hidden z-10"
 			tabIndex={0}
 			aria-label="Switch Language"
 		>
