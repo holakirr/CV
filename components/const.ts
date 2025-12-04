@@ -25,63 +25,57 @@ export const CONTACTS = {
 	website: 'holakirr.com',
 }
 
+/** @uses messages:
+ * t('jobs.projects[0].title')
+ * t('jobs.projects[0].role')
+ * t('jobs.projects[0].points[0]')
+ * t('jobs.projects[0].points[1]')
+ * t('jobs.projects[0].points[2]')
+ *
+ * t('jobs.projects[1].title')
+ * t('jobs.projects[1].role')
+ * t('jobs.projects[1].points[0]')
+ * t('jobs.projects[1].points[1]')
+ * t('jobs.projects[1].points[2]')
+ *
+ * t('jobs.projects[2].title')
+ * t('jobs.projects[2].role')
+ * t('jobs.projects[2].points[0]')
+ * t('jobs.projects[2].points[1]')
+ * t('jobs.projects[2].points[2]')
+ *
+ * t('jobs.projects[3].title')
+ * t('jobs.projects[3].role')
+ * t('jobs.projects[3].points[0]')
+ * t('jobs.projects[3].points[1]')
+ * t('jobs.projects[3].points[2]')
+ *
+ * t('jobs.projects[4].title')
+ * t('jobs.projects[4].role')
+ * t('jobs.projects[4].points[0]')
+ * t('jobs.projects[4].points[1]')
+ * t('jobs.projects[4].points[2]')
+ */
 export const PROJECTS: Project[] = [
 	{
-		title: 'Rerise',
-		role: 'Web Developer',
 		start: new Date(2018, 8),
 		end: new Date(2020, 1),
-		points: [
-			'Clarified requirements with stakeholders',
-			'Managed all processes to create web-site for client from the scratch',
-			'Worked with JavaScript, CSS and pre-compilers (SCSS, Sass), HTML and PHP',
-		],
 	},
 	{
-		title: 'Chitai Gorod',
-		role: 'Frontend Developer',
 		start: new Date(2020, 1),
 		end: new Date(2020, 8),
-		points: [
-			'Collaborated with the team to develop new payment method using JavaScript and HTML and other features',
-			'Assisted in requirements gathering and implementation, contributing to the successful delivery',
-			'Gained proficiency in JavaScript through practical application and self-directed learning',
-		],
 	},
 	{
-		title: 'Globus-IT',
-		role: 'Frontend Developer',
 		start: new Date(2020, 8),
 		end: new Date(2021, 5),
-		points: [
-			"Led the development on two biggest bank companies' web application, utilizing React, Redux and Typescript to deliver robust and scalable solutions",
-			'Collaborated closely with product managers, designers, and other stakeholders to understand requirements and translate them into technical specifications',
-			'Implemented code optimization, performance tuning, and security considerations',
-		],
 	},
 	{
-		title: 'Grid Dynamics',
-		role: 'Software Engineer / Team Lead',
 		start: new Date(2021, 5),
 		end: new Date(2024, 7),
-		points: [
-			'Contributed to the development of different big companies and internal projects using Typescript, JavaScript, React, Redux, Ember.js, Java and Node.js.',
-			'Led the development of some projects.',
-			'Collaborated with cross-functional teams to define requirements, design system architectures, and implement scalable solutions.',
-			'Played a key role in troubleshooting and resolving technical issues, ensuring the smooth operation of software applications.',
-			'Mentored and onboarded junior team members, providing guidance and support to foster their professional growth.',
-		],
 	},
 	{
-		title: 'T1 Innotech',
-		role: 'Software Engineer',
 		start: new Date(2024, 10),
 		end: undefined,
-		points: [
-			'Development and maintenance of cryptocurrency project using modern stack: React, Remix, Nest.js, Node.js',
-			'Extracted part of monolithic application into microservice (BFF and frontend components), improving architectural scalability',
-			'Ensured high code quality and adherence to best practices within the team',
-		],
 	},
 ]
 

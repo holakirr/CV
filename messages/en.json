@@ -1,11 +1,70 @@
 {
+  "certificates": {
+    "title": "Certification"
+  },
+  "common": {
+    "actions": {
+      "download": "Download",
+      "switchLanguage": "Switch language"
+    }
+  },
+  "jobs": {
+    "projects[0]": {
+      "points[0]": "Clarified requirements with stakeholders",
+      "points[1]": "Managed all processes to create web-site for client from the scratch",
+      "points[2]": "Worked with JavaScript, CSS and pre-compilers (SCSS, Sass), HTML, WordPress and PHP",
+      "role": "Web Developer",
+      "title": "Rerise"
+    },
+    "projects[1]": {
+      "points[0]": "Collaborated with the team to develop new payment method using JavaScript and HTML and other features",
+      "points[1]": "Assisted in requirements gathering and implementation, contributing to the successful delivery",
+      "points[2]": "Gained proficiency in JavaScript through practical application and self-directed learning",
+      "role": "Frontend Developer",
+      "title": "Chitai Gorod"
+    },
+    "projects[2]": {
+      "points[0]": "Developed internal admin panel for major Russian bank using React and TypeScript, serving 500+ internal users daily",
+      "points[1]": "Contributed to mobile investment application for one of Russia's largest banks with 10K+ active users",
+      "points[2]": "Implemented comprehensive unit, e2e and integrational testing coverage (85%+) using Jest and React Testing Library",
+      "role": "Frontend Developer",
+      "title": "Globus-IT"
+    },
+    "projects[3]": {
+      "points[0]": "Led cross-functional team of 5 developers in international project focused on dependency updates and creation of comprehensive UI library for Fortune 500 client",
+      "points[1]": "Optimized enterprise application performance, reducing initial load time from 10 to 2 seconds through implementing lazy loading, table data virtualization, and render optimization techniques",
+      "points[2]": "Architected and developed payment method improvements for major global e-commerce brand, successfully processing 1M+ daily transactions",
+      "role": "Senior Frontend Developer / Team Lead",
+      "title": "Grid Dynamics"
+    },
+    "projects[4]": {
+      "points[0]": "Architected and developed cryptocurrency project using modern stack: React, Remix, TypeScript, Node.js with focus on security and performance",
+      "points[1]": "Extracted monolithic application components into microservices (BFF and frontend), improving system scalability by 200% and reducing deployment time",
+      "points[2]": "Collaborated with product managers and backend team in Agile environment using Jira and Confluence",
+      "role": "Senior Frontend Engineer",
+      "title": "T1 Innotech"
+    },
+    "title": "Work Experience"
+  },
   "personal": {
     "address": "Kazan, Russia",
-    "bio": "Senior Frontend Developer with 7+ years of experience building scalable web applications for international companies including Grid Dynamics and T1 Innotech. Expert in React, TypeScript, Node.js, and Nest.js with proven track record in performance optimization (reduced application load time from 10 to 2 seconds) and microservices architecture design. Successfully led cross-functional teams, contributed to payment systems for global brands processing millions of daily transactions. Creator of open-source SnowUI library with 50+ components used in production projects. Fluent in English (C1-C2), experienced in Agile/Scrum environments, open to remote collaboration with companies worldwide",
     "firstName": "Kirill",
     "geo": "Worldwide",
     "lastName": "Petunin",
     "position": "Senior Software Engineer",
     "workFormat": "Remote"
+  },
+  "pets": {
+    "title": "Pets"
+  },
+  "profile": {
+    "bio": "Senior Frontend Developer with 7+ years of experience building scalable web applications for international companies including Grid Dynamics and T1 Innotech. Expert in React, TypeScript, Node.js, and Nest.js with proven track record in performance optimization (reduced application load time from 10 to 2 seconds) and microservices architecture design. Successfully led cross-functional teams, contributed to payment systems for global brands processing millions of daily transactions. Creator of open-source SnowUI library with 50+ components used in production projects. Fluent in English (C1-C2), experienced in Agile/Scrum environments, open to remote collaboration with companies worldwide",
+    "title": "Profile"
+  },
+  "social": {
+    "title": "Social"
+  },
+  "stack": {
+    "title": "Tech Stack"
   }
 }

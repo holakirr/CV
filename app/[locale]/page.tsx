@@ -1,5 +1,12 @@
-import { Bio, Contacts, Developed, Header, Projects, Skills, Technologies } from "#/components";
-import { DownloadCVBtn } from "#/ui/DownloadCVButton";
+import {
+	Bio,
+	Contacts,
+	Developed,
+	Header,
+	Jobs,
+	Skills,
+	Technologies,
+} from '#/components'
 
 export default function Home() {
 	return (
@@ -9,7 +16,7 @@ export default function Home() {
 				<div className="flex flex-col gap-4">
 					<Bio />
 
-					<Projects />
+					<Jobs />
 				</div>
 
 				<hr className="md:w-px md:h-auto md:bg-gray-200" />
@@ -30,8 +37,6 @@ export default function Home() {
 					<Contacts />
 				</aside>
 			</div>
-
-			<DownloadCVBtn />
 		</main>
-	);
+	)
 }

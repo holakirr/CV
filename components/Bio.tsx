@@ -1,8 +1,12 @@
-import { Body, Section } from "#/ui";
-import { CONTACTS } from "./const";
+import { getTranslate } from '#/tolgee/server'
+import { Body, Section } from '#/ui'
 
-export const Bio = () => (
-	<Section title="Profile">
-		<Body>{CONTACTS.bio}</Body>
-	</Section>
-);
+export const Bio = async () => {
+	const t = await getTranslate()
+
+	return (
+		<Section title={t('profile.title')}>
+			<Body>{t('profile.bio')}</Body>
+		</Section>
+	)
+}

@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.tolgee.io/cli-schema.json",
-	"format": "JSON_TOLGEE",
+	"format": "JSON_I18NEXT",
 	"patterns": ["./app/**/*.ts?(x)", "./constants/**/*.ts?(x)"],
 	"push": {
 		"filesTemplate": "./messages/{languageTag}.json",

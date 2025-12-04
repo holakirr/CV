@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "biome check .",
-		"format": "biome format . --write"
+		"format": "biome format . --write",
+		"tolgee:pull": "tolgee pull --api-key $NEXT_PUBLIC_TOLGEE_API_KEY"
 	},
 	"packageManager": "bun@1.3.3",
 	"dependencies": {

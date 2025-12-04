@@ -1,65 +1,109 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-import { DESCRIPTION, TITLE } from "#/constants/meta";
-import MeImage from "#/public/me.jpg";
-import "../globals.css";
-import clsx from "clsx";
-import { TolgeeNextProvider } from "#/tolgee/client";
-import { getLanguage } from "#/tolgee/language";
-import { getTolgee } from "#/tolgee/server";
+import clsx from 'clsx'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import { DESCRIPTION, KEYWORDS, TITLE } from '#/constants/meta'
+import MeImage from '#/public/me.jpeg'
+import { TolgeeNextProvider } from '#/tolgee/client'
+import { getLanguage } from '#/tolgee/language'
+import { getTolgee } from '#/tolgee/server'
+import { LocaleSwitcher } from '#/ui/LocaleSwitcher'
+import '../globals.css'
+import { DownloadCVBtn } from '#/ui/DownloadCVButton'
 
 export const metadata: Metadata = {
 	title: TITLE,
 	description: DESCRIPTION,
-	keywords:
-		"software engineer's CV, software engineer's resume, frontend developer's CV, frontend developer's resume, frontend development experience, 7+ years experience, 6+ years experience, 5+ years experience, 4+ years experience, 3+ years experience, frontend development projects, web developer role, frontend development skills, frontend developer role, web developer qualifications",
+	keywords: KEYWORDS,
+
 	authors: [
 		{
-			name: "Kirill Petunin",
-			url: "https://github.com/holakirr",
+			name: 'Kirill Petunin',
+			url: 'https://github.com/holakirr',
 		},
 	],
-	metadataBase: new URL("https://holakirr.com/"),
+
+	creator: 'Kirill Petunin',
+	publisher: 'Kirill Petunin',
+
+	metadataBase: new URL('https://holakirr.com'),
+
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+
 	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		alternateLocale: ['ru_RU'],
+		url: 'https://holakirr.com',
+		siteName: 'Kirill Petunin Portfolio',
 		title: TITLE,
 		description: DESCRIPTION,
-		type: "website",
-		locale: "en_US",
-		images: [MeImage.src],
-		url: "https://holakirr.com/",
+		images: [
+			{
+				url: MeImage.src,
+				width: 1200,
+				height: 630,
+				alt: 'Kirill Petunin - Senior Frontend Developer',
+			},
+		],
 	},
+
 	twitter: {
+		card: 'summary_large_image',
 		title: TITLE,
 		description: DESCRIPTION,
+		creator: '@holakirr',
 		images: [MeImage.src],
 	},
-};
+
+	alternates: {
+		canonical: 'https://holakirr.com',
+		languages: {
+			'en-US': 'https://holakirr.com',
+			'ru-RU': 'https://holakirr.com/ru', // если добавите русскую версию
+		},
+	},
+
+	category: 'technology',
+}
 
 const inter = Inter({
-	subsets: ["cyrillic", "latin"],
-	weight: ["200", "500", "700", "800"],
-});
+	subsets: ['cyrillic', 'latin'],
+	weight: ['200', '500', '700', '800'],
+})
 
 export default async function LocaleLayout({
 	children,
 	params,
 }: {
-	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
+	children: React.ReactNode
+	params: Promise<{ locale: string }>
 }) {
-	const { locale } = await params;
-	const language = await getLanguage(locale);
-	const tolgee = await getTolgee();
-	const staticData = await tolgee.loadRequired();
+	const { locale } = await params
+	const language = await getLanguage(locale)
+	const tolgee = await getTolgee()
+	const staticData = await tolgee.loadRequired()
 
 	return (
 		<html lang={language}>
-			<body className={clsx(inter.className, "bg-orange-100")}>
+			<body className={clsx(inter.className, 'bg-orange-100')}>
 				<TolgeeNextProvider language={language} staticData={staticData}>
+					<LocaleSwitcher locale={locale} />
+
+					<DownloadCVBtn locale={locale} />
+
 					{children}
 				</TolgeeNextProvider>
 			</body>
 		</html>
-	);
+	)
 }

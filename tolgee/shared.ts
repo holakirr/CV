@@ -5,7 +5,7 @@ const apiUrl = process.env.NEXT_PUBLIC_TOLGEE_API_URL
 
 export const ALL_LANGUAGES = ['ru', 'en']
 
-export const DEFAULT_LANGUAGE = 'en'
+export const DEFAULT_LANGUAGE = 'en' as const
 
 export function TolgeeBase() {
 	return Tolgee()

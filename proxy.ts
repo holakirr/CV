@@ -1,15 +1,15 @@
-import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import { ALL_LANGUAGES, DEFAULT_LANGUAGE } from './tolgee/shared'
 
 const LANGUAGE_COOKIE = 'NEXT_LOCALE'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const pathname = request.nextUrl.pathname
 
 	// Extract locale from pathname
 	const pathnameLocale = ALL_LANGUAGES.find(
-		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+		locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
 	)
 
 	// If no locale in pathname, redirect to default locale
@@ -28,7 +28,7 @@ export function middleware(request: NextRequest) {
 	// Locale found in pathname, set cookie and continue
 	const response = NextResponse.next()
 	const currentCookie = request.cookies.get(LANGUAGE_COOKIE)?.value
-	
+
 	// Only update cookie if it's different
 	if (currentCookie !== pathnameLocale) {
 		response.cookies.set(LANGUAGE_COOKIE, pathnameLocale, {
@@ -49,4 +49,3 @@ export const config = {
 		'/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|pdf)).*)',
 	],
 }
-
