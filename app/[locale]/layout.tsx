@@ -3,8 +3,11 @@ import { Inter } from "next/font/google";
 
 import { DESCRIPTION, TITLE } from "#/constants/meta";
 import MeImage from "#/public/me.jpg";
-import "./globals.css";
+import "../globals.css";
 import clsx from "clsx";
+import { TolgeeNextProvider } from "#/tolgee/client";
+import { getLanguage } from "#/tolgee/language";
+import { getTolgee } from "#/tolgee/server";
 
 export const metadata: Metadata = {
 	title: TITLE,
@@ -38,10 +41,25 @@ const inter = Inter({
 	weight: ["200", "500", "700", "800"],
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function LocaleLayout({
+	children,
+	params,
+}: {
+	children: React.ReactNode;
+	params: Promise<{ locale: string }>;
+}) {
+	const { locale } = await params;
+	const language = await getLanguage(locale);
+	const tolgee = await getTolgee();
+	const staticData = await tolgee.loadRequired();
+
 	return (
-		<html lang="en">
-			<body className={clsx(inter.className, "bg-orange-100")}>{children}</body>
+		<html lang={language}>
+			<body className={clsx(inter.className, "bg-orange-100")}>
+				<TolgeeNextProvider language={language} staticData={staticData}>
+					{children}
+				</TolgeeNextProvider>
+			</body>
 		</html>
 	);
 }

@@ -1,8 +1,8 @@
 import { Body, Section } from "#/ui";
-import { PERSONAL } from "./const";
+import { CONTACTS } from "./const";
 
 export const Bio = () => (
 	<Section title="Profile">
-		<Body>{PERSONAL.bio}</Body>
+		<Body>{CONTACTS.bio}</Body>
 	</Section>
 );

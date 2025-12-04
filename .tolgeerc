@@ -1,0 +1,13 @@
+{
+	"$schema": "https://docs.tolgee.io/cli-schema.json",
+	"format": "JSON_TOLGEE",
+	"patterns": ["./app/**/*.ts?(x)", "./constants/**/*.ts?(x)"],
+	"push": {
+		"filesTemplate": "./messages/{languageTag}.json",
+		"language": ["en", "ru"]
+	},
+	"pull": {
+		"path": "./messages",
+		"fileStructureTemplate": "{languageTag}.{extension}"
+	}
+}

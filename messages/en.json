@@ -1,0 +1,11 @@
+{
+  "personal": {
+    "address": "Kazan, Russia",
+    "bio": "Senior Frontend Developer with 7+ years of experience building scalable web applications for international companies including Grid Dynamics and T1 Innotech. Expert in React, TypeScript, Node.js, and Nest.js with proven track record in performance optimization (reduced application load time from 10 to 2 seconds) and microservices architecture design. Successfully led cross-functional teams, contributed to payment systems for global brands processing millions of daily transactions. Creator of open-source SnowUI library with 50+ components used in production projects. Fluent in English (C1-C2), experienced in Agile/Scrum environments, open to remote collaboration with companies worldwide",
+    "firstName": "Kirill",
+    "geo": "Worldwide",
+    "lastName": "Petunin",
+    "position": "Senior Software Engineer",
+    "workFormat": "Remote"
+  }
+}

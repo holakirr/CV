@@ -2,69 +2,78 @@ import { Link, Tag, TEXT_SIZES, Typography } from "@holakirr/snow-ui";
 import Image from "next/image";
 
 import MeImage from "#/public/me.jpeg";
+import { getTranslate } from "#/tolgee/server";
 import { Body } from "#/ui";
 import { MailIcon, PhoneIcon, WebIcon } from "#/ui/icons";
-import { PERSONAL } from "./const";
+import { CONTACTS } from "./const";
 
-export const Header = () => (
-	<header className="flex flex-col gap-6 print:flex-row md:flex-row md:items-center print:items-center">
-		<Image
-			src={MeImage}
-			alt="Photo of me"
-			className="transition-all w-screen md:w-60 md:h-60 print:w-60 print:h-60"
-			placeholder="blur"
-			blurDataURL={MeImage.blurDataURL}
-			loading="lazy"
-			quality={75}
-		/>
+export const Header = async () => {
+	const t = await getTranslate();
 
-		<div className="flex flex-1 flex-col gap-1 justify-between">
-			<div className="flex flex-col py-5 md:py-10">
-				<Typography as="h1" size={TEXT_SIZES[48]} semibold className="space-x-2 uppercase">
-					<span className="text-black">{PERSONAL.firstName}</span>
-					<span>{PERSONAL.lastName}</span>
-				</Typography>
-				<Typography
-					as="h2"
-					size={TEXT_SIZES[24]}
-					semibold
-					className="leading-6 uppercase text-gray-500"
-				>
-					{PERSONAL.position}
-				</Typography>
-			</div>
+	return (
+		<header className="flex flex-col gap-6 print:flex-row md:flex-row md:items-center print:items-center">
+			<Image
+				src={MeImage}
+				alt="Photo of me"
+				className="transition-all w-screen md:size-60 print:size-60"
+				placeholder="blur"
+				blurDataURL={MeImage.blurDataURL}
+				loading="lazy"
+				quality={75}
+			/>
 
-			<hr />
-
-			{/* Description */}
-			<div className="flex flex-col gap-2 items-start">
-				<div className="flex gap-1">
-					<Tag label={PERSONAL.address} />
-
-					<Tag label="Worldwide" />
-
-					<Tag label="Remote" />
+			<div className="flex flex-1 flex-col gap-1 justify-between">
+				<div className="flex flex-col py-5 md:py-10">
+					<Typography as="h1" size={TEXT_SIZES[48]} semibold className="space-x-2 uppercase">
+						<span className="text-black">{t("personal.firstName")}</span>
+						<span>{t("personal.lastName")}</span>
+					</Typography>
+					<Typography
+						as="h2"
+						size={TEXT_SIZES[24]}
+						semibold
+						className="leading-6 uppercase text-gray-500"
+					>
+						{t("personal.position")}
+					</Typography>
 				</div>
 
-				<div className="flex gap-x-2 flex-wrap">
-					<Link href={`tel:${PERSONAL.phone}`} className="flex gap-1 items-center">
-						<PhoneIcon />
-						<Body>{PERSONAL.phone}</Body>
-					</Link>
+				<hr />
 
-					<Link href={`mailto:${PERSONAL.mail}`} className="flex gap-1 items-center">
-						<MailIcon />
-						<Body>{PERSONAL.mail}</Body>
-					</Link>
+				{/* Description */}
+				<div className="flex flex-col gap-2 items-start">
+					<div className="flex gap-1">
+						<Tag label={t("personal.address")} />
 
-					<Link href={PERSONAL.website} className="flex gap-1 items-center">
-						<WebIcon />
-						<Body>{PERSONAL.website}</Body>
-					</Link>
+						<Tag label={t("personal.geo")} />
+
+						<Tag label={t("personal.workFormat")} />
+					</div>
+
+					<div className="flex gap-x-2 flex-wrap">
+						<Link href={`tel:${CONTACTS.phone}`} className="flex gap-1 items-center">
+							<PhoneIcon />
+							<Body>{CONTACTS.phone}</Body>
+						</Link>
+
+						<Link href={`mailto:${CONTACTS.mail}`} className="flex gap-1 items-center">
+							<MailIcon />
+							<Body>{CONTACTS.mail}</Body>
+						</Link>
+
+						<Link
+							href={`https://${CONTACTS.website}`}
+							target="_blank"
+							className="flex gap-1 items-center"
+						>
+							<WebIcon />
+							<Body>{CONTACTS.website}</Body>
+						</Link>
+					</div>
 				</div>
-			</div>
 
-			<hr />
-		</div>
-	</header>
-);
+				<hr />
+			</div>
+		</header>
+	);
+};
