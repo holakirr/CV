@@ -1,24 +1,14 @@
-'use client'
+import type { TFnType } from "@tolgee/react";
+import { Body, Section } from "#/ui";
+import { TECH_STACK } from "./const";
 
-import { Link } from '@holakirr/snow-ui'
-import { useTranslate } from '@tolgee/react'
-import { Section } from '#/ui'
-import { CERTIFICATIONS } from './const'
-
-export const Skills = () => {
-	const { t } = useTranslate()
-
-	return (
-		<Section title={t('certificates.title')}>
-			<ul className="flex flex-col list-disc pl-4 md:pl-6">
-				{CERTIFICATIONS.map(({ link, title }) => (
-					<li key={title}>
-						<Link className="text-sm" href={link} key={title}>
-							{title}
-						</Link>
-					</li>
-				))}
-			</ul>
-		</Section>
-	)
-}
+export const Skills = ({ t }: { t: TFnType }) => (
+	<Section title={t("stack.title")} className="print:mt-8">
+		{TECH_STACK.map((item) => (
+			<div key={item.type} className="flex flex-col print:flex-row">
+				<Body className="underline underline-offset-4">{item.type}:</Body>
+				<Body className="pl-2">{item.description}</Body>
+			</div>
+		))}
+	</Section>
+);

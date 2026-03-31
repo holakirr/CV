@@ -10,55 +10,45 @@
 	},
 	"jobs": {
 		"projects[0]": {
-			"points[0]": "Clarified requirements with stakeholders",
-			"points[1]": "Managed all processes to create web-site for client from the scratch",
-			"points[2]": "Worked with JavaScript, CSS and pre-compilers (SCSS, Sass), HTML, WordPress and PHP",
+			"description": "Orchestrated end-to-end website development lifecycle for client projects, from requirements clarification with stakeholders to deployment. Leveraged JavaScript, CSS (SCSS/Sass), HTML, WordPress and PHP to deliver marketing and corporate websites.",
 			"role": "Web Developer",
 			"title": "Rerise"
 		},
 		"projects[1]": {
-			"points[0]": "Collaborated with the team to develop new payment method using JavaScript and HTML and other features",
-			"points[1]": "Assisted in requirements gathering and implementation, contributing to the successful delivery",
-			"points[2]": "Gained proficiency in JavaScript through practical application and self-directed learning",
+			"description": "Contributed to a new payment method implementation and other features using JavaScript, jQuery and HTML. Spearheaded requirements analysis and implementation, guaranteed on-time delivery of critical features. Strengthened JavaScript skills through intensive hands‑on work and self‑driven learning.",
 			"role": "Frontend Developer",
 			"title": "Chitai Gorod"
 		},
 		"projects[2]": {
-			"points[0]": "Developed internal admin panel for major Russian bank using React and TypeScript, serving 500+ internal users daily",
-			"points[1]": "Contributed to mobile investment application for one of Russia's largest banks with 10K+ active users",
-			"points[2]": "Implemented comprehensive unit, e2e and integrational testing coverage (85%+) using Jest and React Testing Library",
+			"description": "Developed an internal admin panel for a major Russian bank using React and TypeScript, supported 500+ internal users daily. Contributed to a mobile investment application for one of Russia’s largest banks with 10K+ active users. Implemented extensive unit, integration and e2e tests (85%+ coverage) using Jest and React Testing Library.",
 			"role": "Frontend Developer",
 			"title": "Globus-IT"
 		},
 		"projects[3]": {
-			"points[0]": "Led cross-functional team of 5 developers in international project focused on dependency updates and creation of comprehensive UI library for Fortune 500 client",
-			"points[1]": "Optimized enterprise application performance, reducing initial load time from 10 to 2 seconds through implementing lazy loading, table data virtualization, and render optimization techniques",
-			"points[2]": "Architected and developed payment method improvements for major global e-commerce brand, successfully processing 1M+ daily transactions",
+			"description": "Led a team of 5 engineers on an international project for a Fortune 300 client, deployed a modern UI component library and large‑scale dependency modernization. Optimized an enterprise web application, reducing initial load time from 10 to 2 seconds through lazy loading, table data virtualization and render optimizations. Designed and implemented improvements to payment flows for a major global e‑commerce brand, supporting 1M+ daily transactions and improving reliability and user experience.",
 			"role": "Senior Frontend Developer / Team Lead",
 			"title": "Grid Dynamics"
 		},
 		"projects[4]": {
-			"points[0]": "Architected and developed cryptocurrency project using modern stack: React, Remix, TypeScript, Node.js with focus on security and performance",
-			"points[1]": "Extracted monolithic application components into microservices (BFF and frontend), improving system scalability by 200% and reducing deployment time",
-			"points[2]": "Collaborated with product managers and backend team in Agile environment using Jira and Confluence",
+			"description": "Architected and engineered cryptocurrency platform using React, Remix, TypeScript and Node.js, specialized in security, performance and processing real-time transactions with 99.9% uptime target. Designed and implemented a migration from a monolithic frontend to a BFF + micro‑frontend architecture, improving system scalability by 200% and reducing deployment time by 20%. Coordinated product managers and backend engineers in an Agile environment (Jira, Confluence) to refine requirements and ship features to production.",
 			"role": "Senior Frontend Engineer",
 			"title": "T1 Innotech"
 		},
 		"title": "Work Experience"
 	},
 	"personal": {
-		"address": "Kazan, Russia",
+		"address": "Thailand, Bangkok",
 		"firstName": "Kirill",
 		"geo": "Worldwide",
 		"lastName": "Petunin",
-		"position": "Senior Frontend / Full-Stack Engineer",
+		"position": "Senior Frontend / Full-Stack Engineer / Team Lead",
 		"workFormat": "Remote"
 	},
 	"pets": {
-		"title": "Pets"
+		"title": "Pet projects"
 	},
 	"profile": {
-		"bio": "Senior Frontend / Full‑stack Engineer with 7+ years of experience building high‑load e‑commerce, fintech and B2B SaaS products for international companies including Grid Dynamics and T1 Innotech. I specialize in React, TypeScript, Next.js and Node.js/NestJS, focusing on web performance and scalable frontend architecture. Led cross‑functional teams, designed microservices‑based frontends and improved payment systems processing 1M+ daily transactions. Creator of SnowUI design system (50+ components) used in production projects. Fluent English (C1–C2), experienced in Agile/Scrum, open to fully remote senior/lead roles worldwide.",
+		"bio": "Senior Frontend Engineer with 7+ years building high-scale web applications for international companies. Reduced load times by 80%, improved system scalability by 200%, and supported 1M+ daily transactions. Expert in React, TypeScript, and micro-frontend architectures with strong background in fintech and e-commerce domains.",
 		"title": "Profile"
 	},
 	"social": {

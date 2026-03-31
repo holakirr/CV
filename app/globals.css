@@ -1,5 +1,5 @@
-@import '@holakirr/snow-ui/index.css';
-@import 'tailwindcss';
+@import "@holakirr/snow-ui/index.css";
+@import "tailwindcss";
 
 @theme inline {
 	--shadow-paper: 0 40px 120px rgba(15, 23, 42, 0.38);
@@ -15,15 +15,6 @@
 		color: var(--color-gray-500, currentcolor);
 	}
 }
-
-/* body {
-	cursor: url('../public/Cursor.svg'), auto;
-}
-
-button,
-a {
-	cursor: url('../public/CursorHover.svg'), auto;
-} */
 
 @media print {
 	@page {

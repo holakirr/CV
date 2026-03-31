@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { Button } from '@holakirr/snow-ui'
-import { ArrowsDownIcon } from '@holakirr/snow-ui-icons'
-import { useTranslate } from '@tolgee/react'
+import { Button } from "@holakirr/snow-ui";
+import { ArrowsDownIcon } from "@holakirr/snow-ui-icons";
+import { useTranslate } from "@tolgee/react";
 
 const downloadHandler = (locale: string) =>
-	window.open(`/KirillPetuninCV-${locale}.pdf`, '_blank')
+	window.open(`/KirillPetunin-frontend-CV-${locale}.pdf`, "_blank");
 
 export const DownloadCVBtn = ({ locale }: { locale: string }) => {
-	const { t } = useTranslate()
+	const { t } = useTranslate();
 
 	return (
 		<Button
@@ -16,8 +16,8 @@ export const DownloadCVBtn = ({ locale }: { locale: string }) => {
 			className="fixed bottom-5 right-5 md:bottom-10 md:right-10 group print:hidden z-10"
 			variant="filled"
 			size="md"
-			label={t('common.actions.download')}
+			label={t("common.actions.download")}
 			rightContent={<ArrowsDownIcon className="fill-white" />}
 		/>
-	)
-}
+	);
+};

@@ -1,11 +1,11 @@
-import { DevTools, FormatSimple, Tolgee } from '@tolgee/web'
+import { DevTools, FormatSimple, Tolgee } from "@tolgee/web";
 
-const apiKey = process.env.NEXT_PUBLIC_TOLGEE_API_KEY
-const apiUrl = process.env.NEXT_PUBLIC_TOLGEE_API_URL
+const apiKey = process.env.NEXT_PUBLIC_TOLGEE_API_KEY;
+const apiUrl = process.env.NEXT_PUBLIC_TOLGEE_API_URL;
 
-export const ALL_LANGUAGES = ['ru', 'en']
+export const ALL_LANGUAGES = ["ru", "en"];
 
-export const DEFAULT_LANGUAGE = 'en' as const
+export const DEFAULT_LANGUAGE = "en" as const;
 
 export function TolgeeBase() {
 	return Tolgee()
@@ -15,8 +15,8 @@ export function TolgeeBase() {
 			apiKey,
 			apiUrl,
 			staticData: {
-				en: () => import('../messages/en.json'),
-				ru: () => import('../messages/ru.json'),
+				en: () => import("../messages/en.json"),
+				ru: () => import("../messages/ru.json"),
 			},
-		})
+		});
 }

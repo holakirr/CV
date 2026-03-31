@@ -1,14 +1,8 @@
-'use client'
+import type { TFnType } from "@tolgee/react";
+import { Body, Section } from "#/ui";
 
-import { useTranslate } from '@tolgee/react'
-import { Body, Section } from '#/ui'
-
-export const Bio = () => {
-	const { t } = useTranslate()
-
-	return (
-		<Section title={t('profile.title')}>
-			<Body>{t('profile.bio')}</Body>
-		</Section>
-	)
-}
+export const Bio = ({ t }: { t: TFnType }) => (
+	<Section title={t("profile.title")}>
+		<Body>{t("profile.bio")}</Body>
+	</Section>
+);

@@ -1,7 +1,7 @@
-export { Bio } from './Bio'
-export { Contacts } from './Contacts'
-export { Developed } from './Developed'
-export { Header } from './Header'
-export { Jobs } from './Jobs'
-export { Skills } from './Skills'
-export { Technologies } from './Technologies'
+export { Bio } from "./Bio";
+export { Certifications } from "./Certifications";
+export { Contacts } from "./Contacts";
+export { Header } from "./Header";
+export { Jobs } from "./Jobs";
+export { Pets } from "./Pets";
+export { Skills } from "./Skills";
