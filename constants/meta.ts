@@ -1,7 +1,7 @@
 export const TITLE =
-	'Kirill Petunin | Senior Frontend Developer | React TypeScript Node.js Expert'
+	'Kirill Petunin | Senior Frontend/Fullstack Developer | Team Lead | React TypeScript Node.js Expert'
 export const DESCRIPTION =
-	'Senior Frontend Developer with 7+ years experience in React, TypeScript, Node.js. Creator of SnowUI library. Available for remote work worldwide. Portfolio & Resume.'
+	'As a Senior Frontend Engineer with over 7 years of experience, I excel in crafting high-scale web applications that drive results. My expertise in React, TypeScript, and micro-frontend architectures has been pivotal in transforming fintech and e-commerce platforms. At T1 Innotech, I architected a cryptocurrency platform, achieving a 99.9% uptime and enhancing scalability by 200%. Leading a team at Grid Dynamics, I optimized an enterprise application, slashing load times from 10 to 2 seconds, and improved payment flows for a global e-commerce brand, supporting over 1M daily transactions. My strategic thinking and problem-solving skills consistently deliver impactful solutions, making me a top-tier product builder in the tech industry.'
 export const KEYWORDS = [
 	// Job Titles
 	'Senior Frontend Developer',
