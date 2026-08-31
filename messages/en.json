@@ -30,14 +30,19 @@
 			"title": "Grid Dynamics"
 		},
 		"projects[4]": {
-			"description": "Architected and engineered cryptocurrency platform using React, Remix, TypeScript and Node.js, specialized in security, performance and processing real-time transactions with 99.9% uptime target. Designed and implemented a migration from a monolithic frontend to a BFF + micro‑frontend architecture, improving system scalability by 200% and reducing deployment time by 20%. Coordinated product managers and backend engineers in an Agile environment (Jira, Confluence) to refine requirements and ship features to production.",
+			"description": "Architected and engineered cryptocurrency platform using React, Remix, TypeScript and Node.js, specialized in security, performance and processing real-time transactions with 99.9% uptime target. Designed and implemented a migration from a monolithic frontend to a BFF + micro‑frontend architecture, improving system scalability by 200% and reducing deployment time by 20%. Built the product jointly with product managers and backend engineers in an Agile environment (Jira, Confluence), refining requirements together and shipping features to production.",
 			"role": "Senior Frontend Engineer",
 			"title": "T1 Innotech"
 		},
-		"title": "Work Experience"
+		"title": "Work Experience",
+		"projects[5]": {
+			"description": "Built and operate a commercial VPN subscription service solo, in production since May 2026: NestJS Core API (PostgreSQL, Prisma, Redis, BullMQ), Next.js landing with web payments, TypeScript Telegram bot. Recurring billing with idempotent payment webhooks and automatic retries, CI/CD, uptime monitoring, hourly backups, 425+ automated tests. 150+ paying subscribers; I own the full lifecycle from architecture and Linux/Docker infrastructure to payments, support and growth.",
+			"role": "Founder & Engineer",
+			"title": "VPN Subscription Service"
+		}
 	},
 	"personal": {
-		"address": "Thailand, Bangkok",
+		"address": "Russia, Kazan",
 		"firstName": "Kirill",
 		"geo": "Worldwide",
 		"lastName": "Petunin",
@@ -48,7 +53,7 @@
 		"title": "Pet projects"
 	},
 	"profile": {
-		"bio": "As a Senior Frontend Engineer with over 7 years of experience, I excel in crafting high-scale web applications that drive results. My expertise in React, TypeScript, and micro-frontend architectures has been pivotal in transforming fintech and e-commerce platforms. At T1 Innotech, I architected a cryptocurrency platform, achieving a 99.9% uptime and enhancing scalability by 200%. Leading a team at Grid Dynamics, I optimized an enterprise application, slashing load times from 10 to 2 seconds, and improved payment flows for a global e-commerce brand, supporting over 1M daily transactions. My strategic thinking and problem-solving skills consistently deliver impactful solutions, making me a top-tier product builder in the tech industry.",
+		"bio": "As a Senior Frontend Engineer with over 7 years of experience, I excel in crafting high-scale web applications that drive results. My expertise in React, TypeScript, and micro-frontend architectures has been pivotal in transforming fintech and e-commerce platforms. At T1 Innotech, I architected a cryptocurrency platform, achieving a 99.9% uptime and enhancing scalability by 200%. Leading a team at Grid Dynamics, I optimized an enterprise application, slashing load times from 10 to 2 seconds, and improved payment flows for a global e-commerce brand, supporting over 1M daily transactions. Beyond employment, I founded and solo-operate a subscription SaaS with 150+ paying customers, owning architecture, payments, infrastructure and growth end to end. AI-assisted engineering with Claude Code is part of my daily workflow.",
 		"title": "Profile"
 	},
 	"social": {

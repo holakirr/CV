@@ -17,7 +17,7 @@ export interface Link {
 export const CONTACTS = {
 	phone: "+79956727623",
 	mail: "kpetunin@icloud.com",
-	website: "holakirr.com",
+	website: "cv.holakirr.com",
 };
 
 /** @uses messages:
@@ -60,6 +60,10 @@ export const PROJECTS: ProjectData[] = [
 	},
 	{
 		start: new Date(2024, 10),
+		end: undefined,
+	},
+	{
+		start: new Date(2026, 4),
 		end: undefined,
 	},
 ];
