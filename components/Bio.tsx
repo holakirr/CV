@@ -1,8 +1,8 @@
-import type { TFnType } from "@tolgee/react";
+import type { Cv } from "#/lib/cv";
 import { Body, Section } from "#/ui";
 
-export const Bio = ({ t }: { t: TFnType }) => (
-	<Section title={t("profile.title")}>
-		<Body>{t("profile.bio")}</Body>
+export const Bio = ({ title, description }: { title: string; description: Cv["description"] }) => (
+	<Section title={title}>
+		<Body>{description}</Body>
 	</Section>
 );

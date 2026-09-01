@@ -1,22 +1,23 @@
-"use client";
-
-import { useTranslate } from "@tolgee/react";
 import clsx from "clsx";
-import type { ComponentProps } from "react";
+
+import type { Cv } from "#/lib/cv";
 import { Body } from ".";
 
-export type ProjectData = {
-	start: Date;
-	end?: Date;
+type ProjectProps = Cv["experience"][number];
+
+/**
+ * The API already formats the period ("Nov 2024 — Present") in the requested
+ * locale, so the two halves are split back out here rather than re-derived
+ * from the dates.
+ */
+const splitPeriod = (period: string): [string, string] => {
+	const [start = period, end = ""] = period.split("—").map((part) => part.trim());
+
+	return [start, end];
 };
 
-type ProjectProps = ComponentProps<"div"> &
-	ProjectData & {
-		index: number;
-	};
-
-export const Project = ({ start, end, index }: ProjectProps) => {
-	const { t } = useTranslate();
+export const Project = ({ company, position, period, summary, achievements }: ProjectProps) => {
+	const [start, end] = splitPeriod(period);
 
 	return (
 		<div
@@ -26,34 +27,37 @@ export const Project = ({ start, end, index }: ProjectProps) => {
 				"after:content-none md:after:content-[''] after:absolute after:w-4 after:h-4 after:border after:border-gray-400 after:rounded-full after:-left-5 after:top-3"
 			)}
 		>
-			{/* Head */}
 			<div className="flex gap-x-2">
 				<div className="flex flex-col">
 					<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
-						{start.toLocaleString("en-US", { month: "short", year: "numeric" })}
+						{start}
 					</Body>
 
-					<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">
-						{end
-							? end?.toLocaleString("en-US", {
-									month: "short",
-									year: "numeric",
-								})
-							: "Present"}
-					</Body>
+					<Body className="uppercase font-extralight text-slate-500 whitespace-nowrap">{end}</Body>
 				</div>
 
 				<hr className="w-px h-auto bg-gray-200" />
 
 				<div className="flex flex-col">
-					<Body>{t(`jobs.projects[${index}].title`)}</Body>
+					<Body>{company}</Body>
 
-					<Body className="font-bold uppercase">{t(`jobs.projects[${index}].role`)}</Body>
+					<Body className="font-bold uppercase">{position}</Body>
 				</div>
 			</div>
+
 			<hr />
-			{/* Body */}
-			<Body>{t(`jobs.projects[${index}].description`)}</Body>
+
+			{summary && <Body>{summary}</Body>}
+
+			{achievements.length > 0 && (
+				<ul className="flex flex-col list-disc pl-4 md:pl-6">
+					{achievements.map((achievement) => (
+						<li key={achievement.description}>
+							<Body>{achievement.description}</Body>
+						</li>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 };

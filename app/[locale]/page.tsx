@@ -1,39 +1,16 @@
-"use client";
+import { CvView } from "#/components/CvView";
+import { fetchCv, type Locale } from "#/lib/cv";
 
-import { useTranslate } from "@tolgee/react";
-import { Bio, Certifications, Contacts, Header, Jobs, Pets, Skills } from "#/components";
+/**
+ * A server component: the CV is fetched at build time from the GraphQL API, so
+ * the deployed page stays static and needs no client-side data loading.
+ *
+ * Tolgee still owns the interface labels; the CV content itself comes from the
+ * API, which is the single place it is edited.
+ */
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params;
+	const cv = await fetchCv(locale as Locale);
 
-export default function Home() {
-	const { t } = useTranslate();
-
-	return (
-		<main className="flex flex-col gap-10 bg-white mx-auto md:w-3xl lg:w-4xl md:my-6 lg:my-10 print:my-0 pb-20 p-4 md:p-6 xl:p-10 print:p-6 print:w-full shadow-paper print:shadow-none print:text-gray-500">
-			<Header t={t} />
-			<div className="w-full md:flex md:flex-row-reverse space-y-3 md:space-y-0 md:gap-3">
-				<div className="flex flex-col gap-4">
-					<Bio t={t} />
-
-					<Jobs t={t} />
-				</div>
-
-				<hr className="md:w-px md:h-auto md:bg-gray-200" />
-
-				<aside className="md:w-60 md:min-w-60 space-y-3 md:space-y-4">
-					<Skills t={t} />
-
-					<hr />
-
-					<Certifications t={t} />
-
-					<hr />
-
-					<Pets t={t} />
-
-					<hr />
-
-					<Contacts />
-				</aside>
-			</div>
-		</main>
-	);
+	return <CvView cv={cv} />;
 }
