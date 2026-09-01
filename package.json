@@ -4,9 +4,9 @@
 	"private": true,
 	"author": "Kirill Petunin",
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 3001",
 		"build": "next build",
-		"start": "next start",
+		"start": "next start -p 3001",
 		"lint": "biome check .",
 		"format": "biome format . --write",
 		"tolgee:pull": "tolgee pull --api-key $NEXT_PUBLIC_TOLGEE_API_KEY",
