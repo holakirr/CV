@@ -305,6 +305,16 @@ export const cvSnapshot: Record<Locale, Cv> = {
 		],
 		projects: [
 			{
+				name: "Backgammon",
+				description:
+					"Online backgammon — long and short — with live matches over SSE, three tournament formats and Elo rating. The server owns the dice and validates every move with the rules engine the browser uses to highlight them.",
+				url: "https://backgammon.holakirr.com",
+				repositoryUrl: null,
+				demoUrl: null,
+				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
+				featured: true,
+			},
+			{
 				name: "Snow UI",
 				description: "React component library published to npm, documented with Storybook.",
 				url: "https://www.npmjs.com/package/@holakirr/snow-ui",
@@ -674,6 +684,16 @@ export const cvSnapshot: Record<Locale, Cv> = {
 			},
 		],
 		projects: [
+			{
+				name: "Backgammon",
+				description:
+					"Онлайн-нарды, длинные и короткие: партии в реальном времени по SSE, три формата турниров и рейтинг Elo. Кубики бросает только сервер, ходы он же валидирует тем движком правил, которым браузер их подсвечивает.",
+				url: "https://backgammon.holakirr.com",
+				repositoryUrl: null,
+				demoUrl: null,
+				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
+				featured: true,
+			},
 			{
 				name: "Snow UI",
 				description:
