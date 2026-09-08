@@ -4,13 +4,14 @@
 	"private": true,
 	"author": "Kirill Petunin",
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 3001",
 		"build": "next build",
-		"start": "next start",
+		"start": "next start -p 3001",
 		"lint": "biome check .",
 		"format": "biome format . --write",
 		"tolgee:pull": "tolgee pull --api-key $NEXT_PUBLIC_TOLGEE_API_KEY",
-		"tolgee:push": "tolgee push --api-key $NEXT_PUBLIC_TOLGEE_API_KEY"
+		"tolgee:push": "tolgee push --api-key $NEXT_PUBLIC_TOLGEE_API_KEY",
+		"cv:snapshot": "node --experimental-strip-types scripts/snapshot-cv.mjs && biome format --write lib/cv-snapshot.ts"
 	},
 	"packageManager": "bun@1.3.11",
 	"dependencies": {

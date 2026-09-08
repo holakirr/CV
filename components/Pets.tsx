@@ -9,101 +9,68 @@ import {
 	Typography,
 } from "@holakirr/snow-ui";
 import { SnowUIIcon } from "@holakirr/snow-ui-icons";
-import type { TFnType } from "@tolgee/react";
+
+import type { Cv } from "#/lib/cv";
 import { Section } from "#/ui";
 import { GithubIcon, NpmIcon, StoryBookIcon, TelegramIcon } from "#/ui/icons";
 
-export const Pets = ({ t }: { t: TFnType }) => (
-	<Section title={t("pets.title")}>
+type ProjectLink = { label: string; url: string; icon: typeof GithubIcon };
+
+/** The API gives three optional links per project; the design shows them as tags. */
+const linksOf = (project: Cv["projects"][number]): ProjectLink[] => {
+	const links: ProjectLink[] = [];
+	const primaryIcon = project.url.includes("npmjs.com")
+		? NpmIcon
+		: project.url.includes("t.me")
+			? TelegramIcon
+			: StoryBookIcon;
+	const primaryLabel = project.url.includes("npmjs.com")
+		? "Npm"
+		: project.url.includes("t.me")
+			? "Telegram"
+			: "Site";
+
+	links.push({ label: primaryLabel, url: project.url, icon: primaryIcon });
+
+	if (project.repositoryUrl) {
+		links.push({ label: "Github", url: project.repositoryUrl, icon: GithubIcon });
+	}
+
+	if (project.demoUrl) {
+		links.push({ label: "Storybook", url: project.demoUrl, icon: StoryBookIcon });
+	}
+
+	return links;
+};
+
+export const Pets = ({ title, projects }: { title: string; projects: Cv["projects"] }) => (
+	<Section title={title}>
 		<div className="flex flex-col gap-3">
-			<div className="flex flex-col gap-1">
-				<TooltipProvider>
-					<Tooltip>
-						<TooltipContent>React Components Library</TooltipContent>
-						<TooltipTrigger className="flex gap-1 items-center">
-							<SnowUIIcon width={20} height={20} />
-							<Typography size={TEXT_SIZES[14]}>Snow UI</Typography>
-						</TooltipTrigger>
-					</Tooltip>
-				</TooltipProvider>
+			{projects.map((project) => (
+				<div key={project.name} className="flex flex-col gap-1">
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipContent>{project.description}</TooltipContent>
+							<TooltipTrigger className="flex gap-1 items-center">
+								<SnowUIIcon width={20} height={20} />
+								<Typography size={TEXT_SIZES[14]}>{project.name}</Typography>
+							</TooltipTrigger>
+						</Tooltip>
+					</TooltipProvider>
 
-				<div className="flex gap-1">
-					<Link target="_blank" href="https://www.npmjs.com/package/@holakirr/snow-ui">
-						<Tag label="Npm" leftContent={<NpmIcon width={14} height={14} />} className="gap-1" />
-					</Link>
-
-					<Link target="_blank" href="https://github.com/holakirr/snow-ui/tree/main">
-						<Tag
-							label="Github"
-							leftContent={<GithubIcon width={14} height={14} />}
-							className="gap-1"
-						/>
-					</Link>
-
-					<Link target="_blank" href="https://github.com/holakirr/snow-ui/tree/main">
-						<Tag
-							label="Storybook"
-							leftContent={<StoryBookIcon width={14} height={14} />}
-							className="gap-1"
-						/>
-					</Link>
+					<div className="flex gap-1 flex-wrap">
+						{linksOf(project).map((link) => (
+							<Link key={link.url} target="_blank" href={link.url}>
+								<Tag
+									label={link.label}
+									leftContent={<link.icon width={14} height={14} />}
+									className="gap-1"
+								/>
+							</Link>
+						))}
+					</div>
 				</div>
-			</div>
-
-			<div className="flex flex-col gap-1">
-				<TooltipProvider>
-					<Tooltip>
-						<TooltipContent>React Icons Library</TooltipContent>
-						<TooltipTrigger className="flex gap-1 items-center">
-							<SnowUIIcon width={20} height={20} />
-							<Typography size={TEXT_SIZES[14]}>Snow UI Icons</Typography>
-						</TooltipTrigger>
-					</Tooltip>
-				</TooltipProvider>
-
-				<div className="flex gap-1">
-					<Link target="_blank" href="https://www.npmjs.com/package/@holakirr/snow-ui-icons">
-						<Tag label="Npm" leftContent={<NpmIcon width={14} height={14} />} className="gap-1" />
-					</Link>
-
-					<Link target="_blank" href="https://github.com/holakirr/snow-ui-icons/tree/main">
-						<Tag
-							label="Github"
-							leftContent={<GithubIcon width={14} height={14} />}
-							className="gap-1"
-						/>
-					</Link>
-
-					<Link target="_blank" href="https://snow-ui-icons.holakirr.com/">
-						<Tag
-							label="Storybook"
-							leftContent={<StoryBookIcon width={14} height={14} />}
-							className="gap-1"
-						/>
-					</Link>
-				</div>
-			</div>
-
-			<div className="flex flex-col gap-1">
-				<TooltipProvider>
-					<Tooltip>
-						<TooltipContent>Distribution Bot</TooltipContent>
-						<TooltipTrigger className="flex gap-1 items-center">
-							<Typography size={TEXT_SIZES[14]}>VPN</Typography>
-						</TooltipTrigger>
-					</Tooltip>
-				</TooltipProvider>
-
-				<div className="flex gap-1">
-					<Link target="_blank" href="https://t.me/holakirr_vpn_bot">
-						<Tag
-							label="Telegram"
-							leftContent={<TelegramIcon width={14} height={14} />}
-							className="gap-1"
-						/>
-					</Link>
-				</div>
-			</div>
+			))}
 		</div>
 	</Section>
 );
