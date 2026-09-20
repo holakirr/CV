@@ -11,30 +11,31 @@
 		"format": "biome format . --write",
 		"tolgee:pull": "tolgee pull --api-key $NEXT_PUBLIC_TOLGEE_API_KEY",
 		"tolgee:push": "tolgee push --api-key $NEXT_PUBLIC_TOLGEE_API_KEY",
-		"cv:snapshot": "node --experimental-strip-types scripts/snapshot-cv.mjs && biome format --write lib/cv-snapshot.ts"
+		"cv:snapshot": "node --experimental-strip-types scripts/snapshot-cv.mjs && biome format --write lib/cv-snapshot.ts",
+		"cv:pdf": "node scripts/render-pdf.mjs"
 	},
 	"packageManager": "bun@1.3.11",
 	"dependencies": {
 		"@holakirr/snow-ui": "^2.0.2",
 		"@holakirr/snow-ui-icons": "^2.0.0",
-		"@tailwindcss/postcss": "^4.2.2",
-		"@tolgee/react": "^7.0.0",
-		"@types/node": "25.5.0",
-		"@types/react": "19.2.14",
-		"@types/react-dom": "19.2.3",
-		"autoprefixer": "10.4.27",
+		"@tailwindcss/postcss": "^4.3.3",
+		"@tolgee/react": "^7.2.1",
+		"@types/node": "26.6.1",
+		"@types/react": "19.3.0",
+		"@types/react-dom": "19.3.0",
+		"autoprefixer": "10.6.1",
 		"clsx": "^2.1.1",
-		"next": "^16.2.1",
-		"postcss": "8.5.8",
-		"react": "19.2.4",
-		"react-dom": "19.2.4",
-		"sass": "^1.98.0",
-		"tailwindcss": "^4.2.2",
-		"typescript": "6.0.2"
+		"next": "^16.3.5",
+		"postcss": "8.5.28",
+		"react": "19.3.0",
+		"react-dom": "19.3.0",
+		"sass": "^1.104.1",
+		"tailwindcss": "^4.3.3",
+		"typescript": "7.0.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.10",
-		"@tolgee/cli": "^2.16.1",
-		"baseline-browser-mapping": "^2.10.12"
+		"@biomejs/biome": "2.5.14",
+		"@tolgee/cli": "^2.20.0",
+		"baseline-browser-mapping": "^2.11.25"
 	}
 }

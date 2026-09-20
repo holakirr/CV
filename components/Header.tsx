@@ -22,7 +22,7 @@ export const Header = ({ cv }: { cv: Cv }) => {
 			<Image
 				src={MeImage}
 				alt="Photo of me"
-				className="transition-all w-screen md:size-60 print:size-60"
+				className="transition-all size-60 self-center md:self-auto print:size-60"
 				width={440}
 				height={440}
 				placeholder="blur"

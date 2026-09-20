@@ -45,11 +45,27 @@ git add lib/cv-snapshot.ts && git commit
 CV_API_URL=http://localhost:3000/graphql npm run dev
 ```
 
+## Файл для скачивания
+
+Кнопка «Скачать» отдаёт `public/KirillPetunin-frontend-CV-<locale>.pdf`. Эти
+файлы **генерируются из собранного сайта** его же печатными стилями — руками их
+не правят:
+
+```bash
+npm run build
+npm run cv:pdf
+```
+
+Раньше PDF делали отдельно, и он разъехался с сайтом: в файле последняя работа
+была за ноябрь 2024, когда на странице уже стояла роль с мая 2026. Поэтому
+`cv:pdf` идёт следом за `cv:snapshot` — обновил контент, пересобрал файл.
+
 ## Откуда что берётся
 
 | | Источник | Где править |
 | --- | --- | --- |
 | Имя, должность, био, опыт, навыки, проекты, сертификаты, ссылки | `lib/cv-snapshot.ts`, сгенерирован из GraphQL API | `prisma/seed/cv-data.ts` в репозитории API, затем `npm run cv:snapshot` |
+| Файл для скачивания (PDF) | `public/KirillPetunin-frontend-CV-*.pdf`, печать собранного сайта | `npm run build && npm run cv:pdf` |
 | Заголовки секций, кнопки | Tolgee | Tolgee / `messages/*.json` |
 
 Язык запрашивается у API аргументом `locale` — русская и английская версии
