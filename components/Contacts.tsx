@@ -1,20 +1,10 @@
-import { Link } from "@holakirr/snow-ui";
-
 import type { Cv } from "#/lib/cv";
-import { Body, Section } from "#/ui";
-import { GithubIcon, InstagramIcon, LinkedInIcon, TelegramIcon, WebIcon } from "#/ui/icons";
+import { displayUrl } from "#/lib/cv-view";
 
-const ICON_BY_PLATFORM = {
-	GITHUB: GithubIcon,
-	LINKEDIN: LinkedInIcon,
-	TELEGRAM: TelegramIcon,
-	INSTAGRAM: InstagramIcon,
-	WEBSITE: WebIcon,
-} as const;
+const label =
+	"mb-3 text-[13px] font-extrabold uppercase tracking-[0.08em] text-gray-500 print:mb-2 print:text-[11px] print:tracking-[0.1em] print:text-gray-900";
 
-const iconFor = (platform: string) =>
-	ICON_BY_PLATFORM[platform as keyof typeof ICON_BY_PLATFORM] ?? WebIcon;
-
+/** Social links: tags on the phone, a plain list on desktop, label plus domain on paper. */
 export const Contacts = ({
 	title,
 	socialLinks,
@@ -22,21 +12,25 @@ export const Contacts = ({
 	title: string;
 	socialLinks: Cv["socialLinks"];
 }) => (
-	<Section tag="footer" title={title}>
-		<ul className="flex flex-col gap-1">
-			{socialLinks.map((link) => {
-				const Icon = iconFor(link.platform);
+	<div>
+		<h2 className={label}>{title}</h2>
 
-				return (
-					<li key={link.url}>
-						<Link className="flex items-center gap-1 text-base" href={link.url} target="_blank">
-							<Icon width={14} height={14} />
-
-							<Body>{link.label}</Body>
-						</Link>
-					</li>
-				);
-			})}
+		<ul className="flex flex-wrap gap-2 lg:flex-col print:flex-col print:gap-0.5">
+			{socialLinks.map((link) => (
+				<li key={link.url}>
+					<a
+						href={link.url}
+						target="_blank"
+						rel="noreferrer"
+						className="inline-block rounded-lg border border-gray-200 px-3 py-2.5 text-sm font-bold text-orange-800 hover:bg-orange-50 hover:no-underline lg:border-0 lg:p-0 lg:font-medium lg:text-orange-700 print:border-0 print:p-0 print:text-[12px] print:font-medium print:text-gray-900"
+					>
+						{link.label}
+						{displayUrl(link.url) !== link.label && (
+							<span className="hidden text-gray-600 print:inline"> {displayUrl(link.url)}</span>
+						)}
+					</a>
+				</li>
+			))}
 		</ul>
-	</Section>
+	</div>
 );

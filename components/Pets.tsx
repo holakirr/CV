@@ -1,75 +1,41 @@
-import {
-	Link,
-	Tag,
-	TEXT_SIZES,
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-	Typography,
-} from "@holakirr/snow-ui";
-import { SnowUIIcon } from "@holakirr/snow-ui-icons";
-
 import type { Cv } from "#/lib/cv";
+import { projectLinks } from "#/lib/cv-view";
 import { Section } from "#/ui";
-import { GithubIcon, NpmIcon, StoryBookIcon, TelegramIcon } from "#/ui/icons";
 
-type ProjectLink = { label: string; url: string; icon: typeof GithubIcon };
-
-/** The API gives three optional links per project; the design shows them as tags. */
-const linksOf = (project: Cv["projects"][number]): ProjectLink[] => {
-	const links: ProjectLink[] = [];
-	const primaryIcon = project.url.includes("npmjs.com")
-		? NpmIcon
-		: project.url.includes("t.me")
-			? TelegramIcon
-			: StoryBookIcon;
-	const primaryLabel = project.url.includes("npmjs.com")
-		? "Npm"
-		: project.url.includes("t.me")
-			? "Telegram"
-			: "Site";
-
-	links.push({ label: primaryLabel, url: project.url, icon: primaryIcon });
-
-	if (project.repositoryUrl) {
-		links.push({ label: "Github", url: project.repositoryUrl, icon: GithubIcon });
-	}
-
-	if (project.demoUrl) {
-		links.push({ label: "Storybook", url: project.demoUrl, icon: StoryBookIcon });
-	}
-
-	return links;
-};
-
+/** Four columns on desktop, a stack on the phone; on paper the links carry their domain. */
 export const Pets = ({ title, projects }: { title: string; projects: Cv["projects"] }) => (
 	<Section title={title}>
-		<div className="flex flex-col gap-3">
+		<div className="flex flex-col gap-6 lg:grid lg:grid-cols-4 lg:gap-10 print:grid print:grid-cols-2 print:gap-x-7 print:gap-y-3.5">
 			{projects.map((project) => (
-				<div key={project.name} className="flex flex-col gap-1">
-					<TooltipProvider>
-						<Tooltip>
-							<TooltipContent>{project.description}</TooltipContent>
-							<TooltipTrigger className="flex gap-1 items-center">
-								<SnowUIIcon width={20} height={20} />
-								<Typography size={TEXT_SIZES[14]}>{project.name}</Typography>
-							</TooltipTrigger>
-						</Tooltip>
-					</TooltipProvider>
+				<article
+					key={project.name}
+					className="flex break-inside-avoid flex-col gap-2 border-t-[3px] border-orange-500 pt-3.5 print:gap-0 print:border-t-2 print:border-gray-900 print:pt-2"
+				>
+					<h3 className="text-[17px] font-extrabold print:text-[13px]">{project.name}</h3>
 
-					<div className="flex gap-1 flex-wrap">
-						{linksOf(project).map((link) => (
-							<Link key={link.url} target="_blank" href={link.url}>
-								<Tag
-									label={link.label}
-									leftContent={<link.icon width={14} height={14} />}
-									className="gap-1"
-								/>
-							</Link>
+					<p className="text-sm leading-[1.5] text-gray-600 text-pretty print:mt-[3px] print:text-[12px] print:leading-[1.45] print:text-gray-700">
+						{project.description}
+					</p>
+
+					<div className="mt-0.5 flex flex-wrap gap-1.5 print:mt-1 print:gap-2.5">
+						{projectLinks(project).map((link) => (
+							<a
+								key={link.url}
+								href={link.url}
+								target="_blank"
+								rel="noreferrer"
+								className="rounded-md border-[1.5px] border-orange-500 px-3 py-2 text-[13px] font-bold text-orange-800 hover:bg-orange-50 hover:no-underline lg:px-2 lg:py-0.5 lg:text-[12px] print:rounded-none print:border-0 print:p-0 print:text-[11px] print:text-gray-900 print:underline"
+							>
+								{link.label}
+								<span className="print:hidden"> ↗</span>
+								<span className="hidden font-medium text-gray-600 print:inline">
+									{" "}
+									{link.domain}
+								</span>
+							</a>
 						))}
 					</div>
-				</div>
+				</article>
 			))}
 		</div>
 	</Section>

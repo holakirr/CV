@@ -1,18 +1,18 @@
 @import "@holakirr/snow-ui/index.css";
 @import "tailwindcss";
 
-@theme inline {
-	--shadow-paper: 0 40px 120px rgba(15, 23, 42, 0.38);
-}
-
 @layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentcolor);
-		color: var(--color-gray-500, currentcolor);
+	body {
+		color: var(--color-gray-900);
+	}
+
+	a {
+		color: var(--color-orange-700);
+	}
+
+	a:hover {
+		color: var(--color-orange-800);
+		text-decoration: underline;
 	}
 }
 
@@ -21,5 +21,22 @@
 		size: A4;
 		margin: 0;
 		padding: 0;
+	}
+
+	html,
+	body {
+		background: #fff;
+	}
+
+	/* The last page needs room for the fixed running footer. */
+	main {
+		padding-bottom: 32px;
+	}
+
+	*,
+	*::before,
+	*::after {
+		print-color-adjust: exact;
+		-webkit-print-color-adjust: exact;
 	}
 }

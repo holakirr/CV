@@ -12,5 +12,5 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 	const { locale } = await params;
 	const cv = await fetchCv(locale as Locale);
 
-	return <CvView cv={cv} />;
+	return <CvView cv={cv} locale={locale as Locale} />;
 }

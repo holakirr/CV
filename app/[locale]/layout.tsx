@@ -7,8 +7,6 @@ import { TolgeeNextProvider } from "#/tolgee/client";
 import { getLanguage } from "#/tolgee/language";
 import { getTolgee } from "#/tolgee/server";
 import { ALL_LANGUAGES, DEFAULT_LANGUAGE } from "#/tolgee/shared";
-import { DownloadCVBtn } from "#/ui/DownloadCVButton";
-import { LocaleSwitcher } from "#/ui/LocaleSwitcher";
 import "../globals.css";
 
 /**
@@ -121,12 +119,8 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={language}>
-			<body className={clsx(inter.className, "bg-orange-100")}>
+			<body className={clsx(inter.className, "bg-stone-200 print:bg-white")}>
 				<TolgeeNextProvider language={language} staticData={staticData}>
-					<LocaleSwitcher locale={locale} />
-
-					<DownloadCVBtn locale={locale} />
-
 					{children}
 				</TolgeeNextProvider>
 			</body>

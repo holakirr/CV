@@ -1,23 +1,19 @@
 "use client";
 
-import { Button } from "@holakirr/snow-ui";
-import { ArrowsDownIcon } from "@holakirr/snow-ui-icons";
 import { useTranslate } from "@tolgee/react";
 
-const downloadHandler = (locale: string) =>
-	window.open(`/KirillPetunin-frontend-CV-${locale}.pdf`, "_blank");
-
+/** A plain link to the pre-rendered PDF; it lives in the header and is hidden on print. */
 export const DownloadCVBtn = ({ locale }: { locale: string }) => {
 	const { t } = useTranslate();
 
 	return (
-		<Button
-			onClick={() => downloadHandler(locale)}
-			className="fixed bottom-5 right-5 md:bottom-10 md:right-10 group print:hidden z-10 shadow-lg"
-			variant="filled"
-			size="md"
-			label={t("common.actions.download")}
-			rightContent={<ArrowsDownIcon className="fill-white" />}
-		/>
+		<a
+			href={`/KirillPetunin-frontend-CV-${locale}.pdf`}
+			target="_blank"
+			rel="noreferrer"
+			className="rounded-lg bg-orange-950 px-3.5 py-2 text-[13px] font-bold text-orange-100 hover:text-white hover:no-underline lg:py-[7px]"
+		>
+			{t("common.actions.download")} ↓
+		</a>
 	);
 };

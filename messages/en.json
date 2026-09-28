@@ -6,6 +6,15 @@
 		"actions": {
 			"download": "Download",
 			"switchLanguage": "Switch language"
+		},
+		"duration": {
+			"years": {
+				"one": "{n} yr",
+				"other": "{n} yrs"
+			},
+			"months": {
+				"other": "{n} mo"
+			}
 		}
 	},
 	"jobs": {
@@ -39,7 +48,9 @@
 			"description": "Built and operate a commercial VPN subscription service solo, in production since May 2026: NestJS Core API (PostgreSQL, Prisma, Redis, BullMQ), Next.js landing with web payments, TypeScript Telegram bot. Recurring billing with idempotent payment webhooks and automatic retries, CI/CD, uptime monitoring, hourly backups, 425+ automated tests. 150+ paying subscribers; I own the full lifecycle from architecture and Linux/Docker infrastructure to payments, support and growth.",
 			"role": "Founder & Engineer",
 			"title": "VPN Subscription Service"
-		}
+		},
+		"current": "Present",
+		"earlier": "Earlier"
 	},
 	"personal": {
 		"address": "Russia, Kazan",
@@ -54,12 +65,22 @@
 	},
 	"profile": {
 		"bio": "As a Senior Frontend Engineer with over 7 years of experience, I excel in crafting high-scale web applications that drive results. My expertise in React, TypeScript, and micro-frontend architectures has been pivotal in transforming fintech and e-commerce platforms. At T1 Innotech, I architected a cryptocurrency platform, achieving a 99.9% uptime and enhancing scalability by 200%. Leading a team at Grid Dynamics, I optimized an enterprise application, slashing load times from 10 to 2 seconds, and improved payment flows for a global e-commerce brand, supporting over 1M daily transactions. Beyond employment, I founded and solo-operate a subscription SaaS with 150+ paying customers, owning architecture, payments, infrastructure and growth end to end. AI-assisted engineering with Claude Code is part of my daily workflow.",
-		"title": "Profile"
+		"title": "Profile",
+		"years": {
+			"one": "{n} year of experience",
+			"other": "{n} years of experience"
+		}
 	},
 	"social": {
 		"title": "Social"
 	},
 	"stack": {
 		"title": "Tech Stack"
+	},
+	"languages": {
+		"title": "Languages",
+		"level": {
+			"NATIVE": "native"
+		}
 	}
 }

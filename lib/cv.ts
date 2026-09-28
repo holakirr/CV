@@ -30,7 +30,7 @@ export async function fetchCv(locale: Locale): Promise<Cv> {
 	return fetchCvFromApi(locale, API_URL);
 }
 
-const CATEGORY_LABELS: Record<SkillCategory, string> = {
+export const CATEGORY_LABELS: Record<SkillCategory, string> = {
 	FRONTEND: "Frontend",
 	BACKEND: "Backend",
 	DATABASE: "Database",

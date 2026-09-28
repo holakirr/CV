@@ -1,32 +1,42 @@
 "use client";
 
-import { ToggleGroup, ToggleGroupItem } from "@holakirr/snow-ui";
-import { redirect } from "next/navigation";
-import { ALL_LANGUAGES } from "#/tolgee/shared";
-import { FLAGS_MAP_LOCALE } from "./constants";
+import { useTranslate } from "@tolgee/react";
+import clsx from "clsx";
+import { useRouter } from "next/navigation";
 
+import { ALL_LANGUAGES } from "#/tolgee/shared";
+
+/**
+ * Sits inside the orange header, so it draws its own two-tone style instead of
+ * the library toggle: dark on the active language, outlined on the other.
+ */
 export const LocaleSwitcher = ({ locale }: { locale: string }) => {
-	const changeHandler = (lang: string) => redirect(`/${lang}`);
+	const router = useRouter();
+	const { t } = useTranslate();
 
 	return (
-		<ToggleGroup
-			type="single"
-			onValueChange={changeHandler}
-			value={locale}
-			className="fixed bottom-5 left-5 md:bottom-10 md:left-10 print:hidden z-10 bg-white rounded-xl p-0.5 shadow-lg"
-			tabIndex={0}
-			aria-label="Switch Language"
-		>
-			{ALL_LANGUAGES.map((lang) => (
-				<ToggleGroupItem
-					key={lang}
-					aria-label={`${lang} locale`}
-					value={lang}
-					className="cursor-pointer"
-				>
-					{FLAGS_MAP_LOCALE[lang as keyof typeof FLAGS_MAP_LOCALE]}
-				</ToggleGroupItem>
-			))}
-		</ToggleGroup>
+		<fieldset className="flex overflow-hidden rounded-lg border-2 border-orange-950 text-[13px] font-bold">
+			<legend className="sr-only">{t("common.actions.switchLanguage")}</legend>
+			{ALL_LANGUAGES.map((lang) => {
+				const active = lang === locale;
+
+				return (
+					<button
+						key={lang}
+						type="button"
+						aria-pressed={active}
+						onClick={() => {
+							if (!active) router.push(`/${lang}`);
+						}}
+						className={clsx(
+							"cursor-pointer px-3 py-1.5 uppercase lg:py-[5px]",
+							active ? "bg-orange-950 text-orange-100" : "text-orange-950"
+						)}
+					>
+						{lang}
+					</button>
+				);
+			})}
+		</fieldset>
 	);
 };
