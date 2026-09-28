@@ -382,7 +382,7 @@ export const cvSnapshot: Record<Locale, Cv> = {
 			},
 			{
 				name: "English",
-				level: "B2",
+				level: "C1",
 			},
 		],
 	},
@@ -763,7 +763,7 @@ export const cvSnapshot: Record<Locale, Cv> = {
 			},
 			{
 				name: "Английский",
-				level: "B2",
+				level: "C1",
 			},
 		],
 	},
