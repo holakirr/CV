@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { DESCRIPTION, KEYWORDS, OG_LOCALES, SITE_URL, TITLE } from "#/constants/meta";
 import MeImage from "#/public/me.jpeg";
 import { TolgeeNextProvider } from "#/tolgee/client";
@@ -93,9 +93,11 @@ export async function generateMetadata({
 	};
 }
 
-const inter = Inter({
-	subsets: ["cyrillic", "latin"],
-	weight: ["200", "500", "700", "800"],
+const inter = localFont({
+	src: "../../public/fonts/InterVariable.woff2",
+	weight: "100 900",
+	style: "normal",
+	display: "swap",
 });
 
 export function generateStaticParams() {
