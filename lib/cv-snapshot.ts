@@ -8,11 +8,11 @@ import type { Cv, Locale } from "./cv-api";
 export const cvSnapshot: Record<Locale, Cv> = {
 	en: {
 		name: "Kirill Petunin",
-		headline: "Senior Frontend / Full-stack Engineer / Team Lead",
+		headline: "Senior Frontend Engineer · React / TypeScript",
 		description:
-			"Senior engineer with 7+ years of experience building high-scale web applications. Specialises in React, TypeScript and micro-frontend architectures for fintech and e-commerce. At T1 Innotech architected a cryptocurrency platform targeting 99.9% uptime and 200% better scalability. While leading a team at Grid Dynamics, cut enterprise app load time from 10s to 2s and improved payment flows handling 1M+ daily transactions. Also founded and solo-operates a subscription SaaS with 150+ paying customers, owning architecture, payments, infrastructure and growth end to end.",
-		location: "Kazan, Russia",
-		availability: "Worldwide, remote",
+			"React and TypeScript for complex product interfaces. Cut an application’s initial load time from 10 seconds to 2; built payment interfaces and shared UI components. I can own a feature through Node.js/NestJS and production delivery.",
+		location: "Kazan, Russia · UTC+3",
+		availability: "Remote only",
 		email: "kpetunin@icloud.com",
 		phone: "+79956727623",
 		website: "https://cv.holakirr.com",
@@ -32,11 +32,6 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				platform: "TELEGRAM",
 				label: "Telegram",
 				url: "https://t.me/holakirr",
-			},
-			{
-				platform: "INSTAGRAM",
-				label: "Instagram",
-				url: "https://instagram.com/holakirr",
 			},
 			{
 				platform: "WEBSITE",
@@ -158,6 +153,10 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				category: "DEVOPS",
 			},
 			{
+				name: "Codex (AI-assisted engineering)",
+				category: "DEVOPS",
+			},
+			{
 				name: "Vitest",
 				category: "TESTING",
 			},
@@ -192,30 +191,6 @@ export const cvSnapshot: Record<Locale, Cv> = {
 		],
 		experience: [
 			{
-				company: "VPN Subscription Service",
-				position: "Founder & Engineer",
-				period: "May 2026 — Present",
-				isCurrent: true,
-				startDate: "2026-05-01T00:00:00.000Z",
-				endDate: null,
-				summary:
-					"Commercial VPN subscription service built and run solo — 150+ paying subscribers, in production since May 2026.",
-				achievements: [
-					{
-						description:
-							"NestJS core API (PostgreSQL, Prisma, Redis, BullMQ), a Next.js landing with web payments, a TypeScript Telegram bot.",
-					},
-					{
-						description:
-							"Recurring billing with idempotent payment webhooks and automatic retries.",
-					},
-					{
-						description:
-							"CI/CD, uptime monitoring, hourly backups and 425+ automated tests on infrastructure I run myself.",
-					},
-				],
-			},
-			{
 				company: "T1 Innotech",
 				position: "Senior Frontend Engineer",
 				period: "Nov 2024 — Present",
@@ -227,11 +202,11 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				achievements: [
 					{
 						description:
-							"Led the migration from a monolithic frontend to BFF + micro-frontends: 200% better scalability, 20% faster deploys.",
+							"Designed and led the migration from a monolithic frontend to BFF and micro-frontends, reducing deployment time by 20%.",
 					},
 					{
 						description:
-							"Built real-time transaction processing with security and performance as the hard constraints.",
+							"Built transaction interfaces alongside product managers and backend engineers, with performance and security requirements.",
 					},
 				],
 			},
@@ -242,7 +217,8 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				isCurrent: false,
 				startDate: "2021-06-01T00:00:00.000Z",
 				endDate: "2024-08-01T00:00:00.000Z",
-				summary: "Fortune 300 client project, leading a team of 5 engineers.",
+				summary:
+					"International enterprise projects; daily collaboration with US clients and distributed teams.",
 				achievements: [
 					{
 						description:
@@ -254,7 +230,7 @@ export const cvSnapshot: Record<Locale, Cv> = {
 					},
 					{
 						description:
-							"Reworked payment flows for a global e-commerce brand handling 1M+ daily transactions.",
+							"Improved payment interfaces for an international e-commerce product whose system handled 1M+ daily transactions. Built TypeScript/NestJS services alongside frontend work.",
 					},
 				],
 			},
@@ -265,7 +241,8 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				isCurrent: false,
 				startDate: "2020-09-01T00:00:00.000Z",
 				endDate: "2021-06-01T00:00:00.000Z",
-				summary: "Banking products for major Russian financial institutions.",
+				summary:
+					"React/TypeScript bank admin panel (500+ daily users); investment app (10K+ users), 85%+ test coverage.",
 				achievements: [
 					{
 						description:
@@ -305,18 +282,9 @@ export const cvSnapshot: Record<Locale, Cv> = {
 		],
 		projects: [
 			{
-				name: "Backgammon",
-				description:
-					"Online backgammon — long and short — with live matches over SSE, three tournament formats and Elo rating. The server owns the dice and validates every move with the rules engine the browser uses to highlight them.",
-				url: "https://backgammon.holakirr.com",
-				repositoryUrl: null,
-				demoUrl: null,
-				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
-				featured: true,
-			},
-			{
 				name: "Snow UI",
-				description: "React component library published to npm, documented with Storybook.",
+				description:
+					"React component library published to npm, with Storybook documentation and a companion icon library. Component APIs, reusable UI and ongoing library maintenance.",
 				url: "https://www.npmjs.com/package/@holakirr/snow-ui",
 				repositoryUrl: "https://github.com/holakirr/snow-ui",
 				demoUrl: "https://snow-ui.holakirr.com",
@@ -324,22 +292,23 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				featured: true,
 			},
 			{
-				name: "Snow UI Icons",
-				description: "Companion icon set for Snow UI, published to npm with a live Storybook.",
-				url: "https://www.npmjs.com/package/@holakirr/snow-ui-icons",
-				repositoryUrl: "https://github.com/holakirr/snow-ui-icons",
-				demoUrl: "https://snow-ui-icons.holakirr.com/",
-				stack: ["React", "TypeScript", "SVG", "Storybook"],
-				featured: true,
-			},
-			{
 				name: "VPN Subscription Service",
 				description:
-					"Commercial VPN subscription service with recurring billing, run solo in production for 150+ paying subscribers.",
+					"Built and operate a paid subscription service independently since May 2026: Next.js, NestJS, PostgreSQL/Prisma and Redis/BullMQ. Recurring payments, idempotent webhooks, CI/CD, monitoring, hourly backups and 425+ automated tests.",
 				url: "https://vpn.holakirr.com",
 				repositoryUrl: null,
 				demoUrl: null,
 				stack: ["NestJS", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Next.js", "Docker"],
+				featured: true,
+			},
+			{
+				name: "Backgammon",
+				description:
+					"Online backgammon — long and short — with live matches over SSE, three tournament formats and Elo rating. The server owns the dice and validates every move with the rules engine the browser uses to highlight them.",
+				url: "https://backgammon.holakirr.com",
+				repositoryUrl: null,
+				demoUrl: null,
+				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
 				featured: true,
 			},
 		],
@@ -388,11 +357,11 @@ export const cvSnapshot: Record<Locale, Cv> = {
 	},
 	ru: {
 		name: "Kirill Petunin",
-		headline: "Senior Frontend / Full-stack инженер / тимлид",
+		headline: "Senior Frontend Engineer · React / TypeScript",
 		description:
-			"Senior-инженер с опытом более 7 лет в разработке высоконагруженных веб-приложений. Специализируюсь на React, TypeScript и микрофронтендах для финтеха и электронной коммерции. В T1 Innotech спроектировал криптовалютную платформу с целевым аптаймом 99,9% и ростом масштабируемости на 200%. Руководя командой в Grid Dynamics, сократил время загрузки корпоративного приложения с 10 до 2 секунд и доработал платёжные сценарии, обслуживающие более 1 млн транзакций в день. Помимо найма — основал и в одиночку веду подписочный SaaS со 150+ платящими клиентами, отвечая за архитектуру, платежи, инфраструктуру и рост.",
-		location: "Казань, Россия",
-		availability: "Удалённо, по всему миру",
+			"React и TypeScript для сложных продуктовых интерфейсов. Сократил начальную загрузку приложения с 10 до 2 секунд, разрабатывал платёжные интерфейсы и общие UI-компоненты. Могу взять на себя функцию целиком, включая Node.js/NestJS и выпуск в production.",
+		location: "Казань, Россия · UTC+3",
+		availability: "Только удалённо",
 		email: "kpetunin@icloud.com",
 		phone: "+79956727623",
 		website: "https://cv.holakirr.com",
@@ -412,11 +381,6 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				platform: "TELEGRAM",
 				label: "Telegram",
 				url: "https://t.me/holakirr",
-			},
-			{
-				platform: "INSTAGRAM",
-				label: "Instagram",
-				url: "https://instagram.com/holakirr",
 			},
 			{
 				platform: "WEBSITE",
@@ -538,6 +502,10 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				category: "DEVOPS",
 			},
 			{
+				name: "Codex (AI-assisted engineering)",
+				category: "DEVOPS",
+			},
+			{
 				name: "Vitest",
 				category: "TESTING",
 			},
@@ -572,30 +540,6 @@ export const cvSnapshot: Record<Locale, Cv> = {
 		],
 		experience: [
 			{
-				company: "VPN Subscription Service",
-				position: "Основатель и инженер",
-				period: "май 2026 — Сейчас",
-				isCurrent: true,
-				startDate: "2026-05-01T00:00:00.000Z",
-				endDate: null,
-				summary:
-					"Коммерческий VPN-сервис по подписке, построенный и обслуживаемый в одиночку: 150+ платящих подписчиков, в продакшене с мая 2026 года.",
-				achievements: [
-					{
-						description:
-							"Ядро API на NestJS (PostgreSQL, Prisma, Redis, BullMQ), лендинг на Next.js с приёмом платежей, Telegram-бот на TypeScript.",
-					},
-					{
-						description:
-							"Регулярные списания с идемпотентными платёжными вебхуками и автоматическими повторами.",
-					},
-					{
-						description:
-							"CI/CD, мониторинг доступности, ежечасные бэкапы и 425+ автотестов на инфраструктуре, которую веду сам.",
-					},
-				],
-			},
-			{
 				company: "T1 Innotech",
 				position: "Senior Frontend-инженер",
 				period: "нояб. 2024 — Сейчас",
@@ -607,11 +551,11 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				achievements: [
 					{
 						description:
-							"Провёл переход от монолитного фронтенда к BFF + микрофронтендам: масштабируемость +200%, время выката −20%.",
+							"Спроектировал и провёл переход от монолитного frontend к BFF и микрофронтендам; время развёртывания сократилось на 20%.",
 					},
 					{
 						description:
-							"Построил обработку транзакций в реальном времени, где безопасность и производительность — жёсткие ограничения.",
+							"Совместно с продуктовыми менеджерами и backend-инженерами разрабатывал интерфейсы транзакций с требованиями к производительности и безопасности.",
 					},
 				],
 			},
@@ -622,7 +566,8 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				isCurrent: false,
 				startDate: "2021-06-01T00:00:00.000Z",
 				endDate: "2024-08-01T00:00:00.000Z",
-				summary: "Проект для клиента из Fortune 300, руководство командой из 5 инженеров.",
+				summary:
+					"Международные корпоративные проекты; ежедневная работа с US-клиентами и распределёнными командами.",
 				achievements: [
 					{
 						description:
@@ -634,7 +579,7 @@ export const cvSnapshot: Record<Locale, Cv> = {
 					},
 					{
 						description:
-							"Переработал платёжные сценарии международного e-commerce бренда с 1 млн+ транзакций в день.",
+							"Дорабатывал платёжные интерфейсы международного e-commerce продукта, система которого обслуживала 1 млн+ транзакций в день. Разрабатывал TypeScript/NestJS-сервисы наряду с frontend.",
 					},
 				],
 			},
@@ -645,7 +590,8 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				isCurrent: false,
 				startDate: "2020-09-01T00:00:00.000Z",
 				endDate: "2021-06-01T00:00:00.000Z",
-				summary: "Банковские продукты для крупных российских финансовых организаций.",
+				summary:
+					"Банковская админ-панель на React/TypeScript (500+ пользователей в день); инвестприложение (10K+ пользователей), покрытие тестами 85%+.",
 				achievements: [
 					{
 						description:
@@ -685,19 +631,9 @@ export const cvSnapshot: Record<Locale, Cv> = {
 		],
 		projects: [
 			{
-				name: "Backgammon",
-				description:
-					"Онлайн-нарды, длинные и короткие: партии в реальном времени по SSE, три формата турниров и рейтинг Elo. Кубики бросает только сервер, ходы он же валидирует тем движком правил, которым браузер их подсвечивает.",
-				url: "https://backgammon.holakirr.com",
-				repositoryUrl: null,
-				demoUrl: null,
-				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
-				featured: true,
-			},
-			{
 				name: "Snow UI",
 				description:
-					"Библиотека React-компонентов, опубликованная в npm и задокументированная в Storybook.",
+					"Библиотека React-компонентов в npm, документация в Storybook и отдельный набор иконок. Компонентный API, переиспользование UI и сопровождение библиотеки.",
 				url: "https://www.npmjs.com/package/@holakirr/snow-ui",
 				repositoryUrl: "https://github.com/holakirr/snow-ui",
 				demoUrl: "https://snow-ui.holakirr.com",
@@ -705,22 +641,23 @@ export const cvSnapshot: Record<Locale, Cv> = {
 				featured: true,
 			},
 			{
-				name: "Snow UI Icons",
-				description: "Набор иконок к Snow UI, опубликованный в npm, с живым Storybook.",
-				url: "https://www.npmjs.com/package/@holakirr/snow-ui-icons",
-				repositoryUrl: "https://github.com/holakirr/snow-ui-icons",
-				demoUrl: "https://snow-ui-icons.holakirr.com/",
-				stack: ["React", "TypeScript", "SVG", "Storybook"],
-				featured: true,
-			},
-			{
 				name: "VPN Subscription Service",
 				description:
-					"Коммерческий VPN-сервис по подписке с регулярными списаниями; в одиночку веду в продакшене для 150+ платящих подписчиков.",
+					"С мая 2026 самостоятельно разрабатываю и эксплуатирую платный сервис: Next.js, NestJS, PostgreSQL/Prisma и Redis/BullMQ. Регулярные платежи, идемпотентные вебхуки, CI/CD, мониторинг, почасовые бэкапы и 425+ автотестов.",
 				url: "https://vpn.holakirr.com",
 				repositoryUrl: null,
 				demoUrl: null,
 				stack: ["NestJS", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Next.js", "Docker"],
+				featured: true,
+			},
+			{
+				name: "Backgammon",
+				description:
+					"Онлайн-нарды, длинные и короткие: партии в реальном времени по SSE, три формата турниров и рейтинг Elo. Кубики бросает только сервер, ходы он же валидирует тем движком правил, которым браузер их подсвечивает.",
+				url: "https://backgammon.holakirr.com",
+				repositoryUrl: null,
+				demoUrl: null,
+				stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "SSE", "Docker", "Caddy"],
 				featured: true,
 			},
 		],
