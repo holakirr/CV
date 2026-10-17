@@ -25,6 +25,11 @@ export const CvView = ({ cv, locale }: { cv: Cv; locale: Locale }) => {
 
 			<Jobs title={t("jobs.title")} experience={cv.experience} locale={locale} />
 
+			<div className="px-5 pt-6 text-sm leading-relaxed text-gray-700 lg:px-[72px] print:px-12 print:pt-3 print:text-[12px] print:leading-[1.4]">
+				<p>{t("profile.cooperation")}</p>
+				<p className="mt-2">{t("profile.engineering")}</p>
+			</div>
+
 			<Skills title={t("stack.title")} skills={cv.skills} />
 
 			<Pets title={t("pets.title")} projects={cv.projects} />

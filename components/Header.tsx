@@ -16,7 +16,9 @@ export const Header = ({ cv, locale }: { cv: Cv; locale: Locale }) => {
 	const years = t(`profile.years.${pluralCategory(cv.yearsOfExperience, locale)}`, {
 		n: cv.yearsOfExperience,
 	});
-	const websiteLabel = cv.website?.replace(/^https?:\/\//, "").replace(/\/$/, "");
+	const professionalLinks = cv.socialLinks.filter((link) =>
+		["GITHUB", "LINKEDIN"].includes(link.platform)
+	);
 
 	const contactLink =
 		"font-bold text-orange-950 hover:text-orange-950 -my-[7px] py-2.5 text-[15px] lg:my-0 lg:py-0 lg:text-base print:my-0 print:py-0 print:text-[12px] print:text-gray-900";
@@ -64,7 +66,7 @@ export const Header = ({ cv, locale }: { cv: Cv; locale: Locale }) => {
 					<span>{cv.location}</span>
 				</div>
 
-				<div className="mt-3.5 flex flex-col gap-0.5 lg:mt-auto lg:flex-row lg:flex-wrap lg:gap-7 lg:pt-6 print:mt-1.5 print:flex-row print:flex-wrap print:gap-x-[18px] print:gap-y-1.5 print:pt-0">
+				<div className="mt-3.5 flex flex-col gap-0.5 lg:mt-auto lg:flex-row lg:flex-wrap lg:gap-x-5 lg:gap-y-2 lg:pt-6 print:mt-1.5 print:flex-row print:flex-wrap print:gap-x-[18px] print:gap-y-1.5 print:pt-0">
 					{cv.phone && (
 						<a href={`tel:${cv.phone.replace(/[^\d+]/g, "")}`} className={contactLink}>
 							{formatPhone(cv.phone)}
@@ -75,12 +77,24 @@ export const Header = ({ cv, locale }: { cv: Cv; locale: Locale }) => {
 						{cv.email}
 					</a>
 
-					{cv.website && (
-						<a href={cv.website} target="_blank" rel="noreferrer" className={contactLink}>
-							{websiteLabel}
+					{professionalLinks.map((link) => (
+						<a
+							key={link.url}
+							href={link.url}
+							target="_blank"
+							rel="noreferrer"
+							className={contactLink}
+						>
+							{link.label}
 						</a>
-					)}
+					))}
 				</div>
+				<a
+					href={`mailto:${cv.email}`}
+					className="mt-5 self-start rounded-md bg-orange-950 px-4 py-3 text-sm font-bold !text-orange-100 hover:!text-white print:hidden"
+				>
+					{t("common.actions.discuss")}
+				</a>
 			</div>
 
 			<Photo className="hidden lg:block lg:h-[300px] lg:w-60 lg:self-end lg:rounded-xl lg:border-[3px] lg:border-orange-950 print:block print:h-[104px] print:w-[84px] print:self-start print:rounded-md print:border-[1.5px] print:border-gray-900" />

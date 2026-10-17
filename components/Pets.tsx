@@ -5,7 +5,7 @@ import { Section } from "#/ui";
 /** Four columns on desktop, a stack on the phone; on paper the links carry their domain. */
 export const Pets = ({ title, projects }: { title: string; projects: Cv["projects"] }) => (
 	<Section title={title}>
-		<div className="flex flex-col gap-6 lg:grid lg:grid-cols-4 lg:gap-10 print:grid print:grid-cols-2 print:gap-x-7 print:gap-y-3.5">
+		<div className="flex flex-col gap-6 lg:grid lg:grid-cols-3 lg:gap-10 print:grid print:grid-cols-2 print:gap-x-7 print:gap-y-3.5">
 			{projects.map((project) => (
 				<article
 					key={project.name}

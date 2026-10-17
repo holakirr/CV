@@ -19,7 +19,9 @@ export const Languages = ({ title, languages }: { title: string; languages: Cv["
 				{languages.map((language) => (
 					<li key={language.name}>
 						{language.name} —{" "}
-						{language.level === "NATIVE" ? t("languages.level.NATIVE") : language.level}
+						{["NATIVE", "C1"].includes(language.level)
+							? t(`languages.level.${language.level}`)
+							: language.level}
 					</li>
 				))}
 			</ul>
